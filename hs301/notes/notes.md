@@ -61,11 +61,11 @@ To answer these questions, several schools of philosophy developed:
 
 - Humanist
 
-  - Fuck me
+  - ***TBC***
 
 - Realist
 
-  - Fuck me 2
+  - ***TBC***
 
 ---
 
