@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>notes.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///home/acchan/courses/dark-material.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="hs301---philosophy">HS301 - Philosophy</h1>
+<blockquote>
+<p>&quot;Few men think, yet we all have opinions&quot;<br>
+- George Berkeley</p>
+</blockquote>
+<h2 id="introduction">Introduction</h2>
+<p>$$\braket{f}{fuck}$$</p>
+<blockquote>
+<p>&quot;Philosophy is not an activity by itself... ofcourse it is.&quot;<br>
+- Ranjan Kumar Panda</p>
+</blockquote>
+<p>What is philosophy? Philosophy is a <em>humanistic</em> discipline. Intended to investigate reality and understand how we fit into it.</p>
+<p>Philosophy investigates:</p>
+<ul>
+<li>knowledge,</li>
+<li>the human mind,</li>
+<li>the nature of reality,</li>
+<li>values, and</li>
+<li>relationships.</li>
+</ul>
+<p>Philosophy is a form of <strong>self-reflective, critical, and rational</strong> inquiry.
+It presents a picture of the world and/or a set of values, even pictures about the nature of philosophy and the need to study it.
+Thinking about basic ideas and explaining things around yourself forms your own picture of it.</p>
+<blockquote>
+<p>&quot;An apple falling leads to shaking the tree.&quot;</p>
+</blockquote>
+<p>Basic ideas are born out of observation and lead to experimentation.</p>
+<p>Experimentation leads to more complex ideas, and eventually, the picture of the world finds its feet as a discipline, and often separates from philosophy, such as physics, chemistry, astronomy, and psychology.</p>
+<hr>
+<h2 id="origins">Origins</h2>
+<p>Philosophy arose classically with religious foundations, as a search for <em>wisdom</em>, from pressing motivation or some deeply felt beliefs.</p>
+<p>It originated in Greece and India</p>
+<h3 id="classical-greek-philosophy">Classical Greek Philosophy</h3>
+<h3 id="classical-indian-philosophy">Classical Indian Philosophy</h3>
+<p>Arose as discussion between schools of Hinduism as well as Buddhism, as a battle for <em>intellectual supremacy</em>, an argument to prove <em>their</em> view of the world was correct.</p>
+<hr>
+<h2 id="main-ideas">Main Ideas</h2>
+<p>Philosophy presents three main questions:</p>
+<ul>
+<li>
+<p>What really exists?</p>
+<ul>
+<li>What is being? What is existence?</li>
+<li>Does existence/life have a meaning?</li>
+<li>Is death the end?</li>
+</ul>
+</li>
+<li>
+<p>Whether we can know anything</p>
+</li>
+<li>
+<p>Whether anything is really right or wrong</p>
+</li>
+</ul>
+<p>To answer these questions, several schools of philosophy developed:</p>
+<ul>
+<li>
+<p>Humanist</p>
+<ul>
+<li>Fuck me</li>
+</ul>
+</li>
+<li>
+<p>Realist</p>
+<ul>
+<li>Fuck me 2</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="ways-of-thinking">Ways of thinking</h2>
+<ul>
+<li>Speculative
+<ul>
+<li>Philosophy began with speculation</li>
+<li>Advances with intuitive insights beyond what is observed</li>
+<li>Highlights power of thought and imagination in deducing underlying principles</li>
+</ul>
+</li>
+<li>Imaginative / Creative
+<ul>
+<li>Spirit of discovery / invention</li>
+<li>Leads to new questions and observations</li>
+<li>Tagore - Scientific truths can only be reached through logic, while universal truths may not, they are <em>human</em>.</li>
+</ul>
+</li>
+<li>Reflective / Critical / Meditative
+<ul>
+<li>Objective analysis of thoughts</li>
+<li>Skillful application of concepts</li>
+<li>Synthesis of Ideas <em>(imaginative mix?)</em></li>
+<li>Assesses:
+<ul>
+<li>Accuracy</li>
+<li>Consistency</li>
+<li>Relevance</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Argumentative
+<ul>
+<li>Arguments are a foundation of philosophy</li>
+<li>Experiment with thoughts</li>
+<li>Regulated by laws of logic</li>
+<li>Deduce another set of thoughts from one set</li>
+</ul>
+</li>
+<li>Liberal / Inclusive
+<ul>
+<li>Philosophy needs being open minded</li>
+<li>Accepting new thoughts and ideas as a path to the future</li>
+<li>Lack leads to <em>Philosophical Blindness</em></li>
+<li>Demands self-scrutiny to eliminate prejudices</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>
