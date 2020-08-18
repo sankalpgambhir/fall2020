@@ -1,1 +1,0 @@
-# PH523 - Quantum Mechanics III
