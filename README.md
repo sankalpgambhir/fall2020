@@ -7,7 +7,7 @@ To add new submissions, create a corresponding `weekX` folder, and add the follo
 ```tex
 % is draft? include comments and notes?
 \newcounter{draft}
-\setcounter{1}
+\setcounter{draft}{1}
 
 \input{../macro}
 ```
