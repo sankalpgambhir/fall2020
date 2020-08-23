@@ -2,75 +2,51 @@
 Starting from the abstract ket form of the Schrodinger eqn. derive the Schrodinger eqn. in the co-ordinate basis
 
 The Schrodinger eqn. in the abstract ket form is given as follows -
-    \begin{align}
-        \begin{equation} \label{eq:1}
-            \Hamiltonian \, \ket{\psi} = E\, \ket{\psi}
-        \end{equation}
-    \end{align}
+    \begin{equation} \label{q2:eq:1}
+        \Hamiltonian \, \ket{\psi} = E\, \ket{\psi}
+    \end{equation}
 In the position basis, $\Hamiltonian$ can be expressed in the form of a matrix, while $\ket{\psi}$ can be expressed in terms of components in the basis.
 In the position basis, the components of $\ket{\psi}$ form the wavefunction.
-    \begin{align}
-        \begin{equation} \label{eq:2}
-            \braket{x}{\psi} = \psi(x).
-        \end{equation}
-    \end{align}
+    \begin{equation}
+        \braket{x}{\psi} = \psi(x).
+    \end{equation}
 The Hamiltonian becomes a matrix in the position basis, with components given by -
-    \begin{align}
-        \begin{equation} \label{eq:3}
-            H_{xy} = \bra{x}\Hamiltonian\ket{y}.
-        \end{equation}
-    \end{align}
-Applying this to equation \ref{eq:1}. We multiply by $\bra{x}$ on the left side and insert an identity on the right hand side.
+    \begin{equation}
+        H_{xy} = \bra{x}\Hamiltonian\ket{y}.
+    \end{equation}
+Applying this to equation \ref{q2:eq:1}. We multiply by $\bra{x}$ on the left side and insert an identity on the right hand side.
 The identity is given by - 
-    \begin{align}
-        \begin{equation} \label{eq:4}
-            1 = \int dy\, \ket{y}\bra{y}
-        \end{equation}
-    \end{align}
+    \begin{equation}
+        1 = \int dy\, \ket{y}\bra{y}
+    \end{equation}
 So now we obtain - 
-    \begin{align}
-        \begin{equation} \label{eq:5}
-            \int dy\, \bra{x}\Hamiltonian\ket{y}\braket{y}{\psi} = E \braket{x}{\psi}.
-        \end{equation}
-    \end{align}
+    \begin{equation}
+        \int dy\, \bra{x}\Hamiltonian\ket{y}\braket{y}{\psi} = E \braket{x}{\psi}.
+    \end{equation}
 simplifying to components, we get -
-    \begin{align}
-        \begin{equation} \label{eq:6}
-            \int dy \, H_{xy} \psi(y) = E \, \psi(x).
-        \end{equation}
-    \end{align}
+    \begin{equation} \label{q2:eq:6}
+        \int dy \, H_{xy} \psi(y) = E \, \psi(x).
+    \end{equation}
 now our components are - 
-    \begin{align}
-        \begin{equation} \label{eq:7}
-            H_{xy} = -\frac{\hbar^2}{2m}\delta''(x-y) + V\delta(x-y)
-        \end{equation}
-    \end{align}
-we plug this in to equation \ref{eq:6}. We get - 
-    \begin{align}
-        \begin{equation} \label{eq:7}
-            \int dy \, -\frac{\hbar^2}{2m}\delta''(x-y) \psi(y) + \int dy \, V\psi(y)\delta(x-y) = E \, \psi(x)
-        \end{equation}
-    \end{align}
-    \begin{align}
-        \begin{equation} \label{eq:8}
-            \frac{\hbar^2}{2m} \int dy \, \delta''(x-y) \psi(y) + V \psi(x) = E\,  \psi(x)        
-        \end{equation}
-    \end{align}
+    \begin{equation}
+        H_{xy} = -\frac{\hbar^2}{2m}\delta''(x-y) + V\delta(x-y)
+    \end{equation}
+we plug this in to equation \ref{q2:eq:6}. We get - 
+    \begin{equation}
+        \int dy \, -\frac{\hbar^2}{2m}\delta''(x-y) \psi(y) + \int dy \, V\psi(y)\delta(x-y) = E \, \psi(x)
+    \end{equation}
+    \begin{equation}
+        \frac{\hbar^2}{2m} \int dy \, \delta''(x-y) \psi(y) + V \psi(x) = E\,  \psi(x)        
+    \end{equation}
 Using Integration by Parts on the integral twice, we obtain - 
-    \begin{align}
-        \begin{equation} \label{eq:9}
-            \frac{\hbar^2}{2m} \int dy \, \delta(x-y) \psi''(y) + V \psi(x) = E\,  \psi(x)        
-        \end{equation}
-    \end{align}
-    \begin{align}
-        \begin{equation} \label{eq:10}
-            \frac{\hbar^2}{2m} \psi''(x) + V\, \psi(x) = E\,  \psi(x)        
-        \end{equation}
-    \end{align}
+    \begin{equation}
+        \frac{\hbar^2}{2m} \int dy \, \delta(x-y) \psi''(y) + V \psi(x) = E\,  \psi(x)        
+    \end{equation}
+    \begin{equation}
+        \frac{\hbar^2}{2m} \psi''(x) + V\, \psi(x) = E\,  \psi(x)        
+    \end{equation}
 Generalising this a bit - 
-    \begin{align}
-        \begin{equation} \label{eq:11}
-            - \frac{\hbar^2}{2m} \nabla^2 \psi + V \psi = E \psi        
-        \end{equation}
-    \end{align}
+    \begin{equation}
+        - \frac{\hbar^2}{2m} \nabla^2 \psi + V \psi = E \psi        
+    \end{equation}
 This is quite obviously, our Schrodinger's Equation in co-ordinate form.
