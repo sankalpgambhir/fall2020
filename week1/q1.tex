@@ -1,31 +1,90 @@
 \sankalp{I got this one.}
-
-We consider the action of $\Momentum$ on an arbitrary
-state $\statephi$, 
+We consider the action of $\commutator{\Position}{\Momentum}$ 
+on an arbitrary state $\statephi$, 
 
 \begin{equation}
-    \Momentum \statephi(\position) 
+    \commutator{\Position}{\Momentum} \statephi(\position).
     \label{q1:premise}
 \end{equation}
 
-to derive a weak equivalence with the desired result.
-
-Starting with \cref{q1:premise}, we first write it in
+Starting with equation \ref{q1:premise}, we first write it in
 bra-ket notation as
 
 \begin{equation}
-    \Momentum \statephi(\position) = 
-        \bra{\position} \Momentum \ket{\statephi}.
+    \commutator{\Position}{\Momentum} \statephi(\position) = 
+        \bra{\position} \commutator{\Position}{\Momentum} \ket{\statephi}
 \end{equation}
 
-On the right hand side, we write $\Momentum = \Momentum \cdot \Identity$
-and use the completeness relation for the position space,
-$\int \dd{\position'} \ketbra{\position'}{\position'} = \Identity$,
-to obtain
+Since $\commutator{\Position}{\Momentum} = \iota \hbar$, we get
 
 \begin{equation}
-    \Momentum \statephi(\position) = \int \dd{\position'} \bra{\position} 
-                                        \Momentum \ket{\position'}
-                                        \braket{\position'}{\statephi}
+    \bra{\position} \commutator{\Position}{\Momentum} \ket{\statephi} =
+        \iota \hbar \braket{\position}{\statephi}
 \end{equation}
+
+On either side, we can introduce the identity operator as 
+$\commutator{\Position}{\Momentum} \cdot \Identity$ and 
+$\bra{\position}\Identity\ket{\statephi}$, and use the 
+position space completeness relation $\int 
+\dd{x} \ketbra{\position'}{\position'} = \Identity$ to obtain
+
+\begin{equation}
+    \int \dd{x} \bra{\position}\commutator{\Position}{\Momentum}
+    \ketbra{\position'}{\position'}\ket{\statephi} =
+    \int \dd{x} \bra{\position}\iota \hbar
+    \ketbra{\position'}{\position'}\ket{\statephi}
+\end{equation}
+
+Expanding the commutator operation $\bra{\position}
+\commutator{\Position}{\Momentum}\ket{\position'}$ as
+
+\begin{equation}
+    \bra{\position}\commutator{\Position}{\Momentum}\ket{\position'}
+    = \bra{\position}\Position\Momentum\ket{\position'} - 
+        \bra{\position}\Momentum\Position\ket{\position'} 
+    \nonumber
+\end{equation}
+
+and applying the action of $\Position$ on $\ket{\position'}$
+and $\bra{\position}$, we obtain
+
+\begin{equation}
+    \int \dd{x} (\position - \position')\bra{\position}\Momentum
+    \ketbra{\position'}{\position'}\ket{\statephi} =
+    \int \dd{x} \bra{\position}\iota \hbar
+    \ketbra{\position'}{\position'}\ket{\statephi}.
+\end{equation}
+
+Since the state $\statephi(\position)$ chosen was arbitrary,
+we get the weak equivalence
+
+\begin{equation}
+    (\position - \position')\bra{\position}\Momentum\ket{\position'} =
+    \iota \hbar \braket{\position}{\position'}
+\end{equation}
+
+We know $\braket{\position}{\position'} = \delta(\position - \position')$, and using
+
+\begin{equation}
+    \delta(x) = -x\delta'(x)
+    \nonumber
+\end{equation}
+
+we get
+
+\begin{equation}
+    (\position - \position')\bra{\position}\Momentum\ket{\position'} =
+    \iota \hbar (\position - \position') \dv{}{\position}
+    \delta(\position - \position')
+\end{equation}
+
+And finally, dividing both sides by $(\position - \position')$, assuming
+$\position \not = \position'$, we get the required matrix element
+
+\begin{equation}
+    \bra{\position}\Momentum\ket{\position'} =
+    \iota \hbar \dv{}{\position}\delta(\position - \position')
+\end{equation}
+
+\raggedleft{\qedsymbol}
 
