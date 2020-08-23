@@ -172,7 +172,7 @@
 
       \hwname{} (\hwemail)
 
-      \today
+      \hwdate{} % sankalp: modified for custom dates, define default as \today
     \end{center}
     \renewcommand{\headrulewidth}{0.4pt}
   }
@@ -189,7 +189,7 @@
 
       \hwname{} (\hwemail)
 
-      \today
+      \hwdate{} % sankalp: modified for custom dates, define default as \today
     \end{center}
     \renewcommand{\headrulewidth}{0.4pt}
     \newpage
