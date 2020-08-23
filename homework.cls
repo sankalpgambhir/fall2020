@@ -155,6 +155,7 @@
   \renewcommand{\maketitle}[0]{%
     % Setup header
     \setlength{\headheight}{15.2pt}
+    \setlength{\headwidth}{\textwidth}
     \setlength{\headsep}{0.2in}
     \lhead{\hwclass{} \hwlecture\hwsection}%
     \chead{\hwname{} (\hwemail)}%
