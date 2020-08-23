@@ -12,6 +12,18 @@ Starting with \cref{q1_premise}, we first write it in
 bra-ket notation as
 
 \begin{equation}
-    \bra{\position} \Momentum \ket{\statephi}.
+    \Momentum \statephi(\position) = 
+        \bra{\position} \Momentum \ket{\statephi}.
+\end{equation}
+
+On the right hand side, we write $\Momentum = \Momentum \cdot \Identity$
+and use the completeness relation for the position space,
+$\int \dd[3]{\position'} \ketbra{\position'}{\position'} = \Identity$,
+to obtain
+
+\begin{equation}
+    \Momentum \statephi(\position) = \int \dd[3]{\position'} \bra{\position} 
+                                        \Momentum \ket{\position'}
+                                        \braket{\position'}{\statephi}
 \end{equation}
 
