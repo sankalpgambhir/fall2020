@@ -1,0 +1,37 @@
+% define general format and includes for all assignments
+\documentclass[10pt, a4paper]{extarticle}
+\usepackage[margin=1in]{geometry}
+
+% import req basic packages
+\usepackage[dvipsnames]{xcolor}
+\usepackage[tracking=true]{microtype}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage[utf8]{inputenc}
+\usepackage{braket}
+
+
+% set font
+\usepackage[T1]{fontenc}
+\usepackage{baskervillef}
+\usepackage[varqu,varl,var0]{inconsolata}
+\usepackage[scale=.95,type1]{cabin}
+\usepackage[baskerville,vvarbb]{newtxmath}
+\usepackage[cal=boondoxo]{mathalfa}
+
+
+% reviews and notes
+\ifthenelse{\value{draft} > 0}
+{
+  \newcommand{\parth}[1]{\textcolor{OliveGreen}{$\left[\textnormal{Parth: #1}\right]$}}
+  \newcommand{\sahas}[1]{\textcolor{TealBlue}{$\left[\textnormal{Sahas: #1}\right]$}}
+  \newcommand{\sankalp}[1]{\textcolor{WildStrawberry}{$\left[\textnormal{Sankalp: #1}\right]$}}
+}
+{
+  \newcommand{\parth}[1]{}
+  \newcommand{\sahas}[1]{}
+  \newcommand{\sankalp}[1]{}
+}
