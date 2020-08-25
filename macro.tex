@@ -9,6 +9,7 @@
 \usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{ifthen}
+\usepackage{lineno}
 \usepackage[utf8]{inputenc}
 \usepackage{physics}
 
@@ -43,6 +44,7 @@
 % reviews and notes
 \ifthenelse{\value{draft} > 0}
 {
+  \linenumbers
   \newcommand{\parth}[1]{\textcolor{OliveGreen}{$\left[\textnormal{Parth: #1}\right]$}}
   \newcommand{\sahas}[1]{\textcolor{TealBlue}{$\left[\textnormal{Sahas: #1}\right]$}}
   \newcommand{\sankalp}[1]{\textcolor{WildStrawberry}{$\left[\textnormal{Sankalp: #1}\right]$}}
