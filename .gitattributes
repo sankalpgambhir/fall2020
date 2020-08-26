@@ -1,7 +1,7 @@
 # Linguist overrides
 *.md linguist-detectable=true
 *.html linguist-vendored=true
-*.md linguist-vendored=true
+*.md linguist-vendored=false
 *.md linguist-language=markdown
-*.tex linguist-vendored=true
+*.tex linguist-vendored=false
 *.tex linguist-language=tex
