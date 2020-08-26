@@ -46,12 +46,10 @@
 % Header & Page Setup
 \RequirePackage{fancyhdr}
 \ifthenelse{\equal{\@oplargemargins}{1}}{}{\RequirePackage{fullpage}}
+\RequirePackage{array}
 
 % Links
 \RequirePackage{hyperref}
-
-% Author Parsing
-\RequirePackage{xstring}
 
 % ----- Questions -------------------------------------------------------------
 \newcounter{questionCounter}
@@ -174,7 +172,7 @@
     \begin{center}
       {\Large \hwclass{} \hwtype{} \hwnum}
 
-      \begin{tabular}[t]{c}
+      \begin{tabular}[t]{>{\centering\arraybackslash}p{0.2\textwidth}}
         \hwauthorlist      
       \end{tabular}
       %\hwname{} (\hwemail)

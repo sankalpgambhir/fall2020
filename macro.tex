@@ -23,11 +23,11 @@
 }
 
 % setup fancy author list
-\usepackage{xstring}
+\usepackage{array}
 \def\and{                  % \begin{tabular}
   \end{tabular}
   \hskip 2em 
-  \begin{tabular}[t]{c}}%   % \end{tabular}
+  \begin{tabular}[t]{>{\centering\arraybackslash}p{0.2\textwidth}}}%   % \end{tabular}
 
 % set font
 \usepackage[T1]{fontenc}
