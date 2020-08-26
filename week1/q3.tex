@@ -1,19 +1,24 @@
+\question*{
+    Calculate the matrix elements of the time-evolution operator, i.e.
+    the propagator, in position space.
+}
+
 \sahas{This one's mine.}
 
 We use the identity $\int_{-\infty}^{+\infty} \ket{p}\bra{p} dp = \Identity$ to get:
 
 \begin{equation}
-   \bra{x} U(t) \ket{x'} = \int_{-\infty}^{+\infty} \braket{x}{p}\braket{p}{x'} e^{-ip^2t/2m\hbar} dp
+   \bra{x} U(t) \ket{x'} = \int_{-\infty}^{+\infty} \braket{x}{p}\braket{p}{x'} e^{-ip^2t/2m\hbar} dp~.
 \end{equation}
 
-We use the representation of momentum eigenvectors in the position basis to obtain:
+We use the representation of momentum eigenvectors in the position basis to obtain
 
 \begin{equation}
-    \bra{x} U(t) \ket{x'} = \frac{1}{2 \pi \hbar} \int_{-\infty}^{+\infty} e^{ip(x-x')/\hbar} \times e^{-ip^2t/2m\hbar} dp
+    \bra{x} U(t) \ket{x'} = \frac{1}{2 \pi \hbar} \int_{-\infty}^{+\infty} e^{ip(x-x')/\hbar} \times e^{-ip^2t/2m\hbar} dp~.
 \end{equation}
 
-Finally, we integrate the resulting Gaussian:
+Finally, we integrate the resulting Gaussian to obtain the result,
 
 \begin{equation}
-    \bra{x} U(t) \ket{x'} = (\frac{m}{2 \pi \hbar i t})^{1/2} e^{im(x-x')^2/2 \hbar t}
+    \bra{x} U(t) \ket{x'} = (\frac{m}{2 \pi \hbar i t})^{1/2} e^{im(x-x')^2/2 \hbar t}~.
 \end{equation}
