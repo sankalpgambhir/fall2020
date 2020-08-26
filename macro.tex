@@ -22,6 +22,13 @@
     urlcolor={blue!80!black}
 }
 
+% setup fancy author list
+\usepackage{xstring}
+\def\and{                  % \begin{tabular}
+  \end{tabular}
+  \hskip 2em 
+  \begin{tabular}[t]{c}}%   % \end{tabular}
+
 % set font
 \usepackage[T1]{fontenc}
 \usepackage{baskervillef}
@@ -56,6 +63,10 @@
 }
 
 % homework class and document settings
+\newcommand{\hwauthorlist}{ Parth Sastry    \\ \texttt{180260026} \and
+                            Sahas Kamat     \\ \texttt{180260030} \and
+                            Sankalp Gambhir \\ \texttt{180260032}
+} % author list for first page only, slightly jank
 \newcommand{\hwname}{Parth Sastry, Sahas Kamat, Sankalp Gambhir}
 \newcommand{\hwemail}{\texttt{180260026, 30, 32}}
 \newcommand{\hwtype}{Assignment}

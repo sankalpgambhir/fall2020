@@ -50,6 +50,9 @@
 % Links
 \RequirePackage{hyperref}
 
+% Author Parsing
+\RequirePackage{xstring}
+
 % ----- Questions -------------------------------------------------------------
 \newcounter{questionCounter}
 \newcounter{partCounter}[questionCounter]
@@ -171,7 +174,10 @@
     \begin{center}
       {\Large \hwclass{} \hwtype{} \hwnum}
 
-      \hwname{} (\hwemail)
+      \begin{tabular}[t]{c}
+        \hwauthorlist      
+      \end{tabular}
+      %\hwname{} (\hwemail)
 
       \hwdate{} % sankalp: modified for custom dates, define default as \today
     \end{center}
