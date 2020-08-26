@@ -10,42 +10,42 @@ In the position basis, the components of $\ket{\psi}$ form the wavefunction.
     \begin{equation}
         \braket{x}{\psi} = \psi(x).
     \end{equation}
-The Hamiltonian becomes a matrix in the position basis, with components given by -
+The Hamiltonian becomes a matrix in the position basis, with components given by 
     \begin{equation}
         H_{xy} = \bra{x}\Hamiltonian\ket{y}.
     \end{equation}
 Applying this to equation \ref{q2:eq:1}. We multiply by $\bra{x}$ on the left side and insert an identity on the right hand side.
-The identity is given by - 
+The identity is given by 
     \begin{equation}
         \Identity = \int dy\, \ket{y}\bra{y}
     \end{equation}
-So now we obtain - 
+So now we obtain 
     \begin{equation}
         \int dy\, \bra{x}\Hamiltonian\ket{y}\braket{y}{\psi} = E \braket{x}{\psi}.
     \end{equation}
-simplifying to components, we get -
+simplifying to components, we get 
     \begin{equation} \label{q2:eq:6}
         \int dy \, H_{xy} \psi(y) = E \, \psi(x).
     \end{equation}
-now our components are - 
+now our components are 
     \begin{equation}
         H_{xy} = -\frac{\hbar^2}{2m}\delta''(x-y) + V\delta(x-y)
     \end{equation}
-we plug this in to equation \ref{q2:eq:6}. We get - 
+we plug this in to equation \ref{q2:eq:6}. We get  
     \begin{equation}
         \int dy \, [-\frac{\hbar^2}{2m}\delta''(x-y) \psi(y)] + \int dy \, V\psi(y)\delta(x-y) = E \, \psi(x)
     \end{equation}
     \begin{equation}
         - \frac{\hbar^2}{2m} \int dy \, \delta''(x-y) \psi(y) + V \psi(x) = E\,  \psi(x)        
     \end{equation}
-Using Integration by Parts on the integral twice, we obtain - 
+Using Integration by Parts on the integral twice, we obtain 
     \begin{equation}
         - \frac{\hbar^2}{2m} \int dy \, \delta(x-y) \psi''(y) + V \psi(x) = E\,  \psi(x)        
     \end{equation}
     \begin{equation}
         - \frac{\hbar^2}{2m} \psi''(x) + V\, \psi(x) = E\,  \psi(x)        
     \end{equation}
-Generalising this a bit - 
+Upon generalising this a bit, we get
     \begin{equation}
         - \frac{\hbar^2}{2m} \nabla^2 \psi + V \psi = E \psi        
     \end{equation}
