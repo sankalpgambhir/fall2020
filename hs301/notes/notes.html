@@ -58,6 +58,85 @@ figcaption {
     margin-top: 0.5em;
 }
 
+/* From extension marp-team.marp-vscode */
+#marp-vscode {
+  all: initial;
+}
+
+/* Override VS Code default CSS rules reverting to initial
+   https://github.com/microsoft/vscode/blob/master/src/vs/workbench/contrib/webview/browser/pre/main.js#L53 */
+body.marp-vscode {
+  padding: 0;
+}
+
+body.marp-vscode img {
+  max-width: unset;
+  max-height: unset;
+}
+
+body.marp-vscode a,
+body.marp-vscode a:hover,
+body.marp-vscode code {
+  color: unset;
+}
+
+body.marp-vscode blockquote {
+  background: unset;
+  border-color: unset;
+}
+
+@media screen {
+  body.marp-vscode {
+    overflow-y: scroll;
+  }
+
+  #marp-vscode svg[data-marpit-svg] {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    display: block;
+    margin: 20px;
+  }
+
+  #marp-vscode[data-polyfill] svg[data-marpit-svg] > foreignobject > section {
+    /* Workaround for wrong hit area caused by Chromium's rendering bug */
+    overflow: visible;
+  }
+
+  /* Based on https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+  #code-csp-warning {
+    background-color: #444;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    margin: 16px;
+    padding: 6px;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    word-wrap: break-word;
+  }
+
+  #code-csp-warning:hover {
+    text-decoration: none;
+    background-color: #007acc;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media print {
+  body.marp-vscode #code-csp-warning {
+    display: none;
+  }
+
+  #marp-vscode[data-polyfill] svg[data-marpit-svg] > foreignobject > section {
+    /* Disable WebKit polyfill */
+    transform: none !important;
+  }
+}
+
 </style>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
@@ -74,7 +153,11 @@ figcaption {
 </style>
         
         
-        
+        <script type="text/javascript">
+/* From extension marp-team.marp-vscode */
+!function(){"use strict";var e,t,r=(function(e,t){Object.defineProperty(t,"__esModule",{value:!0});let r=void 0;function o(e){let t=!1;Array.from(document.querySelectorAll("svg[data-marpit-svg]"),o=>{const{children:n,clientHeight:i,clientWidth:a,viewBox:l}=o;o.style.transform||(o.style.transform="translateZ(0)");const s=e||window!==window.parent&&window.parent.marpitSVGPolyfillZoomFactor||o.currentScale||1;r!==s&&(r=s,t=s);const c=l.baseVal.width/s,d=l.baseVal.height/s,p=Math.min(i/d,a/c);for(let e=0;e<n.length;e+=1){const{style:t}=n[e].firstChild;t.position||(t.position="fixed"),t.transformOrigin||(t.transformOrigin="0 0"),t.transform=`scale(${p}) translateZ(0)`}}),!1!==t&&Object.defineProperty(window,"marpitSVGPolyfillZoomFactor",{configurable:!0,value:t})}const n=(e,t,r)=>{if(e.getAttribute(t)!==r)return e.setAttribute(t,r),!0};function i(e=!0){for(const e of"Apple Computer, Inc."===navigator.vendor?[o]:[])e();Array.from(document.querySelectorAll('svg[data-marp-fitting="svg"]'),e=>{var t;const r=e.firstChild,o=r.firstChild,{scrollWidth:i,scrollHeight:a}=o;let l,s=1;if(e.hasAttribute("data-marp-fitting-code")&&(l=null===(t=e.parentElement)||void 0===t?void 0:t.parentElement),e.hasAttribute("data-marp-fitting-math")&&(l=e.parentElement),l){const e=getComputedStyle(l),t=Math.ceil(l.clientWidth-parseFloat(e.paddingLeft||"0")-parseFloat(e.paddingRight||"0"));t&&(s=t)}const c=Math.max(i,s),d=Math.max(a,1),p=`0 0 ${c} ${d}`;n(r,"width",""+c),n(r,"height",""+d),n(e,"preserveAspectRatio",getComputedStyle(e).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),n(e,"viewBox",p)&&e.classList.toggle("__reflow__")}),e&&window.requestAnimationFrame(()=>i(e))}t.default=function(){if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");window.marpCoreBrowserScript?console.warn("Marp Core's browser script has already executed."):(Object.defineProperty(window,"marpCoreBrowserScript",{value:!0}),i())},t.observer=i}(t={path:e,exports:{},require:function(e,r){return function(){throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs")}(null==r&&t.path)}},t.exports),t.exports);!function(){if(document.getElementById("marp-vscode")){document.body.classList.add("marp-vscode");const e=document.querySelectorAll("style:not(#marp-vscode-style):not(#_defaultStyles)"),t=document.querySelectorAll('link[rel="stylesheet"]:not([href*="marp-vscode"])');e.forEach(e=>e.remove()),t.forEach(e=>e.remove()),r.observer()}}()}();
+</script>
+
     </head>
     <body>
         <h1 id="hs301---philosophy">HS301 - Philosophy</h1>
@@ -109,6 +192,7 @@ Thinking about basic ideas and explaining things around yourself forms your own 
 <p>Philosophy arose classically with religious foundations, as a search for <em>wisdom</em>, from pressing motivation or some deeply felt beliefs.</p>
 <p>It originated in Greece and India</p>
 <h3 id="classical-greek-philosophy">Classical Greek Philosophy</h3>
+<p><em><strong>TBC</strong></em></p>
 <h3 id="classical-indian-philosophy">Classical Indian Philosophy</h3>
 <p>Arose as discussion between schools of Hinduism as well as Buddhism, as a battle for <em>intellectual supremacy</em>, an argument to prove <em>their</em> view of the world was correct.</p>
 <hr>
@@ -193,6 +277,84 @@ Thinking about basic ideas and explaining things around yourself forms your own 
 </ul>
 </li>
 </ul>
+<h2 id="branches-of-philosophy">Branches of Philosophy</h2>
+<h3 id="metaphysics">Metaphysics</h3>
+<blockquote>
+<p><em>What is the fundamental nature of the universe?</em></p>
+</blockquote>
+<ul>
+<li>Fundamental work by Aristotle</li>
+<li>Shunned during the Rennaisance - 'philosophical nonsense'</li>
+<li>Remains relevant in the context of disciplinary integration, application of philosophical ideas as a whole</li>
+</ul>
+<h3 id="epistemology">Epistemology</h3>
+<blockquote>
+<p><em>What is knowledge? How can we 'know'?</em></p>
+</blockquote>
+<ul>
+<li>Knowledge - <em>justified beliefs</em></li>
+<li>Based on <strong>reason</strong> and <strong>experiences</strong>
+<ul>
+<li>Rationalism, and</li>
+<li>Empiricism</li>
+</ul>
+</li>
+</ul>
+<p>Epistemology finds roots in muses about the nature of thought and knowledge in classical philosophies:</p>
+<ul>
+<li><strong>Greek</strong> <br>
+Pyrrho - Pyrrhonism (skepticism) <br>
+Doubting is a form of knowing. True knowledge is impossible.</li>
+<li><strong>Indian</strong> <br>
+Knowledge is based on fundamental principles based on our forms of interaction with the universe, each complementing the others:
+<ul>
+<li><em>Pratyaksha</em> - Perception<br>
+Sensory Perception, only as reliable as our senses.</li>
+<li><em>Anumana</em> - Inference<br>
+Deduction, logical arguments based on perception.</li>
+<li><em>Upmana</em> - Comparison<br>
+<em><strong>Not sure tbh</strong></em></li>
+<li><em>Shabda</em> - Testimony<br>
+Word of mouth, relies on trust in speaker.</li>
+</ul>
+</li>
+</ul>
+<h3 id="logic">Logic</h3>
+<blockquote>
+<p><em>How to develop a system of arguments?</em></p>
+</blockquote>
+<ul>
+<li>Justification for arguments</li>
+<li>A method of proof</li>
+</ul>
+<p>Arguments must be structured and follow logical deduction rules, they should be scientific in nature.</p>
+<h4 id="structure-of-arguments">Structure of Arguments</h4>
+<ul>
+<li>Premise<br>
+A <em>false or true</em> statement about the world. Arguments may be drawn from either premise, the proof technique is independent of the nature of premise. If the premise holds true and the deductions are sound, the conclusion will hold true as well.</li>
+<li>Deduction/Proof Method<br>
+Each sentence should draw from the previous based on some sound logical rules.</li>
+<li>Conclusion<br>
+Any reduction of the premise by use of the proof rules. May be false or true depending on the nature of the premise. If proof rules are not sound, <em>a false conclusion can be derived from a true premise.</em></li>
+</ul>
+<h4 id="types-of-arguments">Types of Arguments</h4>
+<ul>
+<li><em>Deductive</em> Arguments
+<ul>
+<li>Introduced by Aristotle</li>
+</ul>
+</li>
+<li><em>Inductive</em> Arguments
+<ul>
+<li>Introduced by Francis Bacon</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>The rest of the arguments in the slides are absolutely bullshit beyond this, will update as material is expanded.</strong> <em>So much for logic...</em></p>
+</blockquote>
+<h3 id="ethics">Ethics</h3>
+<h3 id="aesthetics">Aesthetics</h3>
 
     </body>
     </html>

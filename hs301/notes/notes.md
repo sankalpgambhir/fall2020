@@ -38,6 +38,8 @@ It originated in Greece and India
 
 ### Classical Greek Philosophy
 
+***TBC***
+
 ### Classical Indian Philosophy
 
 Arose as discussion between schools of Hinduism as well as Buddhism, as a battle for *intellectual supremacy*, an argument to prove *their* view of the world was correct.  
@@ -97,3 +99,69 @@ To answer these questions, several schools of philosophy developed:
   - Accepting new thoughts and ideas as a path to the future
   - Lack leads to *Philosophical Blindness*
   - Demands self-scrutiny to eliminate prejudices
+
+## Branches of Philosophy
+
+### Metaphysics
+
+> *What is the fundamental nature of the universe?*
+
+- Fundamental work by Aristotle
+- Shunned during the Rennaisance \- 'philosophical nonsense'
+- Remains relevant in the context of disciplinary integration, application of philosophical ideas as a whole
+
+### Epistemology
+
+> *What is knowledge? How can we 'know'?*
+
+- Knowledge \- *justified beliefs*
+- Based on **reason** and **experiences**
+  - Rationalism, and
+  - Empiricism
+
+Epistemology finds roots in muses about the nature of thought and knowledge in classical philosophies:
+
+- **Greek** \
+  Pyrrho - Pyrrhonism (skepticism) \
+  Doubting is a form of knowing. True knowledge is impossible.
+- **Indian** \
+  Knowledge is based on fundamental principles based on our forms of interaction with the universe, each complementing the others:
+  - *Pratyaksha* \- Perception\
+    Sensory Perception, only as reliable as our senses.
+  - *Anumana* \- Inference\
+    Deduction, logical arguments based on perception.
+  - *Upmana* \- Comparison\
+    ***Not sure tbh***
+  - *Shabda* \- Testimony\
+    Word of mouth, relies on trust in speaker.
+
+### Logic
+
+> *How to develop a system of arguments?*
+
+- Justification for arguments
+- A method of proof
+
+Arguments must be structured and follow logical deduction rules, they should be scientific in nature.
+
+#### Structure of Arguments
+
+- Premise\
+  A *false or true* statement about the world. Arguments may be drawn from either premise, the proof technique is independent of the nature of premise. If the premise holds true and the deductions are sound, the conclusion will hold true as well.
+- Deduction/Proof Method\
+  Each sentence should draw from the previous based on some sound logical rules.
+- Conclusion\
+  Any reduction of the premise by use of the proof rules. May be false or true depending on the nature of the premise. If proof rules are not sound, *a false conclusion can be derived from a true premise.*
+
+#### Types of Arguments
+
+- *Deductive* Arguments
+  - Introduced by Aristotle
+- *Inductive* Arguments
+  - Introduced by Francis Bacon
+
+> **The rest of the arguments in the slides are absolutely bullshit beyond this, will update as material is expanded.** *So much for logic...*
+
+### Ethics
+
+### Aesthetics
