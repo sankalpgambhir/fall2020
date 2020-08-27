@@ -1,0 +1,60 @@
+\question*{Starting from the abstract ket form of the Schrodinger eqn.
+     derive the Schrodinger eqn. in the co-ordinate basis}
+
+\parth{Question 2 is mine}
+The Schrodinger eqn. in the abstract ket form is given as 
+    \begin{equation} \label{q2:eq:1}
+        \Hamiltonian \, \ket{\psi} = E\, \ket{\psi}~.
+    \end{equation}
+
+In the position basis, $\Hamiltonian$ can be expressed in the form of a matrix, while $\ket{\psi}$ can be expressed in terms of components in the basis.
+In the position basis, the components of $\ket{\psi}$ form the wavefunction
+    \begin{equation}
+        \braket{x}{\psi} = \psi(x)~.
+    \end{equation}
+
+The Hamiltonian becomes a matrix in the position basis, with components given by 
+    \begin{equation}
+        H_{xy} = \bra{x}\Hamiltonian\ket{y}~.
+    \end{equation}
+
+Applying this to equation \ref{q2:eq:1}. We multiply by $\bra{x}$ on the left side and insert an identity on the right hand side.
+The identity is given by 
+    \begin{equation}
+        \Identity = \int dy\, \ket{y}\bra{y}
+    \end{equation}
+
+So, now we obtain 
+    \begin{equation}
+        \int dy\, \bra{x}\Hamiltonian\ket{y}\braket{y}{\psi} = E \braket{x}{\psi}~.
+    \end{equation}
+
+Simplifying to components, we get 
+    \begin{equation} \label{q2:eq:6}
+        \int dy \, H_{xy} \psi(y) = E \, \psi(x)
+    \end{equation}
+
+and now our components are 
+    \begin{equation}
+        H_{xy} = -\frac{\hbar^2}{2m}\delta''(x-y) + V\delta(x-y)~.
+    \end{equation}
+
+We plug this in to equation \ref{q2:eq:6}. We get  
+    \begin{gather}
+        \int dy \, [-\frac{\hbar^2}{2m}\delta''(x-y) \psi(y)] + \int dy \, V\psi(y)\delta(x-y) = E \, \psi(x)~,
+        \\- \frac{\hbar^2}{2m} \int dy \, \delta''(x-y) \psi(y) + V \psi(x) = E\,  \psi(x)~.        
+    \end{gather}
+
+Using Integration by Parts on the integral twice, we obtain 
+    \begin{gather}
+        - \frac{\hbar^2}{2m} \int dy \, \delta(x-y) \psi''(y) + V \psi(x) = E\,  \psi(x)~,        
+        \\
+        - \frac{\hbar^2}{2m} \psi''(x) + V\, \psi(x) = E\,  \psi(x)~.        
+    \end{gather}
+
+Upon generalising this a bit, we get
+    \begin{equation}
+        - \frac{\hbar^2}{2m} \nabla^2 \psi + V \psi = E \psi~.        
+    \end{equation}
+
+This is quite obviously, our Schrodinger's Equation in co-ordinate form.
