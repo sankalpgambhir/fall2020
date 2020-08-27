@@ -51,27 +51,18 @@
 % reviews and notes
 \ifthenelse{\value{draft} > 0}
 {
-  \linenumbers
-  \newcommand{\parth}[1]{\textcolor{OliveGreen}{$\left[\textnormal{Parth: #1}\right]$}}
-  \newcommand{\sahas}[1]{\textcolor{TealBlue}{$\left[\textnormal{Sahas: #1}\right]$}}
   \newcommand{\sankalp}[1]{\textcolor{WildStrawberry}{$\left[\textnormal{Sankalp: #1}\right]$}}
 }
 {
-  \newcommand{\parth}[1]{}
-  \newcommand{\sahas}[1]{}
   \newcommand{\sankalp}[1]{}
 }
 
 % homework class and document settings
-\newcommand{\hwauthorlist}{ Parth Sastry    \\ \texttt{180260026} \and
-                            Sahas Kamat     \\ \texttt{180260030} \and
-                            Sankalp Gambhir \\ \texttt{180260032}
-} % author list for first page only, slightly jank
-\newcommand{\hwname}{Parth Sastry, Sahas Kamat, Sankalp Gambhir}
-\newcommand{\hwemail}{\texttt{180260026, 30, 32}}
+\newcommand{\hwname}{Sankalp Gambhir}
+\newcommand{\hwemail}{\texttt{180260032}}
 \newcommand{\hwtype}{Assignment}
 \newcommand{\hwnum}{0} % default number
 \newcommand{\hwdate}{\today} % default to today if no submission date specified 
-\newcommand{\hwclass}{PH423}
+\newcommand{\hwclass}{PH563}
 \newcommand{\hwlecture}{} % unused, but needed
 \newcommand{\hwsection}{} % unused, but needed
