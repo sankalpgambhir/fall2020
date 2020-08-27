@@ -1,3 +1,3 @@
-# fall2020
+# Fall 2020
 
-Notes and materials for the Fall 2020 semester
+Notes, materials, and assignment submissions for the Fall 2020 semester.
