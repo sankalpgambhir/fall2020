@@ -1,0 +1,38 @@
+
+4-14.py :
+unsat
+Sky and Space are each blue or black, theorem holds true
+unsat
+Hammers are rugged, theorem holds true
+
+--------
+
+4-3.py :
+
+--------
+
+4-4.py :
+sat
+[z = 0, y = 3/2, x = 0]
+
+--------
+
+4-5.py :
+
+--------
+
+4-6.py :
+unsat
+
+--------
+
+4-7.py :
+
+--------
+
+4-8.py :
+sat
+[drinks = [1 -> False, else -> True]]
+Not valid
+
+--------
