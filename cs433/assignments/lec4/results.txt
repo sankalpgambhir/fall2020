@@ -8,6 +8,9 @@ Hammers are rugged, theorem holds true
 --------
 
 4-3.py :
+Or(And(A, B), Not(Or(Or(B, C), And(A, C))))
+Sat
+[A = False, B = False, C = False]
 
 --------
 
@@ -18,6 +21,8 @@ sat
 --------
 
 4-5.py :
+And(x + y < 0, x > 0, y > 0)
+[y = 6, x = 6]
 
 --------
 
@@ -27,6 +32,11 @@ unsat
 --------
 
 4-7.py :
+[c = U!val!0, P = [else -> True], f = [else -> U!val!0]]
+c comes out to be U!Val!0, a constant sort.
+The function f(x) returns c for x = c, and returns c for x != c, implying it is a constant function.
+The Predicate P(x) returns true for x = c and True for x != c, implying it is a constant predicate that always evaluates to True.
+These assignments solve our phi
 
 --------
 
