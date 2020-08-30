@@ -10,15 +10,7 @@ Even if one of the inputs is wrong due to SEU,
 we will still get the correct answer. \hfill \textbf{[30]}}
 
 We can construct a simple minimal logic circuit using a Karnaugh
-Map. First, we establosh the form of the circuit and construct a
-target truth table.
-
-\begin{figure}[ht]
-    \centering
-    \input{fig/bbcircuit}
-    \caption{Expected Circuit}
-    \label{fig:black-box-circ}
-\end{figure}
+Map. First, we establsh the target truth table.
 
 And, the truth table for $f(A, B, C)$
 
@@ -39,7 +31,7 @@ And, the truth table for $f(A, B, C)$
     \end{tabular}
     \label{fig:truth-table}
 \end{figure}
-
+\newpage
 Minimizing $f$ using a Karnaugh Map
 
 \begin{figure}[h]
@@ -55,4 +47,11 @@ Minimizing $f$ using a Karnaugh Map
     \label{fig:kmap}
 \end{figure}
 
-we get $f(A, B, C) = AB + BC + CA$.
+we get $f(A, B, C) = AB + BC + CA$. The digital logic circuit is thus
+
+\begin{figure}[ht]
+    \centering
+    \def\svgwidth{0.5\textwidth}
+    \scalebox{0.75}{\input{fig/digcirc.pdf_tex}}
+    \label{fig:dig-circ}
+\end{figure}
