@@ -1,0 +1,33 @@
+\question*{
+    Prove that the LTL formulae $\finally \phi$ and $\lnot \globally (\lnot \phi)$
+    are equivalent.
+}
+
+Let $\model = (S, R, S_0, L)$ be an arbitrary model, and 
+$\treepath \in \paths{\model}{s}$ an arbitrary path with $s \in S_0$.
+We prove that $\finally \phi$ holds iff $\lnot \globally (\lnot \phi)$ does.
+
+\emph{($\Rightarrow$ direction).} If $\model, \treepath \models \finally \phi$,
+there exists an $i \in \naturals$ such that $\model, \treepath^i \models \phi$
+per the definition of the operator $\finally$. Consider now the formula
+$\globally (\lnot \phi)$ --- the semantics of the operator $\globally$ imply that
+for this formula to hold, $\forall j \in \naturals : \model, \treepath^j \models
+\lnot \phi$, but we know that this does not hold for $j = i$, as 
+$\model, \treepath^k \models \lnot \phi$ iff $\model, \treepath^k \not \models \phi$
+for any $k$, as per the definition of $\lnot$. Thus, 
+$\model, \treepath \not \models \globally(\lnot \phi)$ and by extension
+$\model, \treepath \models \lnot \globally(\lnot \phi)$.
+
+\emph{($\Leftarrow$ direction).} If $\model, \treepath \models \lnot \globally (\lnot \phi)$,
+then, reducing using the definition of the operator $\lnot$, 
+$\model, \treepath \not \models \globally (\lnot \phi)$. Negating the definition
+of the operator $\globally$, we see that there must exist an $i \in \naturals$
+such that the subformula does not hold, that is, $\model, \treepath^i \models \lnot \lnot \phi$.
+Reducing this using the double negation axiom, we get that $\model, \treepath^i \models \phi$.
+This is precisely the condition for $\finally \phi$ to hold. So we get that
+$\model, \treepath \models \finally \phi$.
+
+Thus, the two formulae imply each other and are thus equivalent for the pair
+$\tuple{\model, \treepath}$. But, since both were chosen arbitrarily from the
+respective domains, the equivalence holds true for all $\tuple{\model, \treepath}$.
+Thus, the two formulae are equivalent.
