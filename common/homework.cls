@@ -77,12 +77,12 @@
     \stepcounter{questionCounter}%
       \vspace{.2in}%
       \ifx\writtensection\undefined{}
-        \noindent{\bf \questiontype\ \arabic{questionCounter}.}%
+        \noindent{\bf \questiontype\ \hwnumtype{questionCounter}.}%
         \else
           \ifnum\writtensection=0
-          \noindent{\bf \questiontype\ \arabic{questionCounter}.}%
+          \noindent{\bf \questiontype\ \hwnumtype{questionCounter}.}%
           \else
-          \noindent{\bf \questiontype\ \writtensection.\arabic{questionCounter}}%
+          \noindent{\bf \questiontype\ \writtensection.\hwnumtype{questionCounter}}%
         \fi
       \vspace{0.3em} \hrule \vspace{.1in}%
   \end{minipage}
@@ -100,7 +100,7 @@
     \addtocounter{questionCounter}{1}%
     \setcounter{partCounter}{0}%
     \vspace{.2in}%
-    \noindent{\bf \arabic{questionCounter}. #1}%
+    \noindent{\bf \hwnumtype{questionCounter}. #1}%
     \vspace{0.3em} \hrule \vspace{.1in}%
   \end{minipage}
 }
@@ -116,7 +116,7 @@
 }{\end{enumerate}}
 
 \newenvironment{arabicparts}[0]{%
-  \begin{enumerate}[label=\textbf{\arabic{questionCounter}.\arabic{partCounter}})]%
+  \begin{enumerate}[label=\textbf{\hwnumtype{questionCounter}.\arabic{partCounter}})]%
 }{\end{enumerate}}
 
 \newcommand{\questionpart}[0]{\stepcounter{partCounter}\item}
