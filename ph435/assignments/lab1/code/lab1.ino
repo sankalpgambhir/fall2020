@@ -13,6 +13,10 @@ void setup(){
     pinMode(LED_BUILTIN, OUTPUT);
 }
 
+void loop(){
+    test();
+}
+
 inline void test(){
     digitalWrite(LED_BUILTIN, LOW);
     Serial.print('0');

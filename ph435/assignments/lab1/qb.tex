@@ -24,8 +24,8 @@
     be half of the time period of the obtained (presumably square) wave.
 
     \questionpart
-    We put the tested function in the \texttt{loop()} section (see Appendix)
-    and then monitor the output using a C++ program with the serial output 
+    I put the function to be tested in the \texttt{loop()} section (see Appendix)
+    and then monitored the output using a C++ program with the serial output 
     pipelined into it. The C++ program was designed to count instances 
     of an arbitrary provided string and time it with a high resolution clock.
     
@@ -39,7 +39,7 @@
     \end{figure}
 
     Looking at the figure, the first few points are quite erratic, possibly
-    due many small erratic foactors interacting, such as transmission delay, serial
+    due to many small factors interacting, such as transmission delay, serial
     poling delay, etc. The data very quickly settles into a linear plot, which
     was used to determine a best fit line of the form
 
@@ -49,6 +49,8 @@
 
     $$m = 1.148 \times 10^{7} \textnormal{ns}$$
     $$c = 3.907 \times 10^{5} \textnormal{ns}$$
+
+    using a least-squares fit.
 
     Thus, the average time per function run was $1.148 \times 10^{7}$ ns, i.e. \textbf{11.48 ms}.
 
