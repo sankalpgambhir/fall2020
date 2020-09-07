@@ -96,7 +96,7 @@
     \newpage%
   }{}%
   % Wrap in minipage so that we don't get a line break enywhere in between
-  \begin{minipage}{\linewidth}%
+  \noindent\begin{minipage}{\textwidth}%
     \addtocounter{questionCounter}{1}%
     \setcounter{partCounter}{0}%
     \vspace{.2in}%
