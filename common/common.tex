@@ -17,10 +17,11 @@
 \usepackage{circuitikz}
 
 % tikz stuffs
-\usepackage{tikz}
-\usepackage{tkz-orm}
+\usepackage{tikz, tkz-orm, pgfplots}
 \usetikzlibrary{arrows,shapes,automata,backgrounds,petri,decorations.markings}
 \usetikzlibrary{matrix,positioning,decorations.pathreplacing,calc,tikzmark}
+\pgfplotsset{width=7.5cm,compat=1.12}
+\usepgfplotslibrary{fillbetween}
 
 % customised links
 \usepackage{hyperref}
@@ -45,6 +46,34 @@
 \usepackage[scale=.95,type1]{cabin}
 \usepackage[baskerville,vvarbb]{newtxmath}
 \usepackage[cal=boondoxo]{mathalfa}
+
+% code display style
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.38,0,0.52}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codepurple},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 
 % reviews and notes
