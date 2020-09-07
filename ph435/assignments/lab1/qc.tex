@@ -1,0 +1,71 @@
+\newpage
+
+\question*{Analog Input}
+
+\begin{arabicparts}
+    
+    \questionpart
+    Quite mixed with the next part, so combined answer in \ref{part:c2}
+    \questionpart
+    \label{part:c2}
+    The analog ports A0-A5 were connected to a voltage divider between
+    5V and GND taken from the Uno itself as the circuit in Fig \ref{subfig:voltdiv}
+    and the program as in \ref{subfig:analogcode}. The actual setup was as already
+    included in Fig \ref{fug:arduinoconnected}.
+
+    The wires were moved between the three measuring points during the course 
+    of the execution to collect data.
+
+    \begin{figure}[ht]
+        \centering
+        \begin{subfigure}[b]{0.7\textwidth}
+            \def\svgwidth{0.5\textwidth}
+            \scalebox{1.1}{\input{fig/voltdiv.pdf_tex}}
+            \caption{Voltage divider circuit}
+            \label{subfig:voltdiv}
+        \end{subfigure}
+        %
+        \begin{subfigure}[b]{0.7\textwidth}
+            \begin{lstlisting}[language=C++]
+    void setup(){
+        Serial.begin(9600);
+    }
+
+    void loop(){
+        Serial.print("\nValues : ");
+        for(int port = A0; port <= A5; port++){
+            Serial.print(analogRead(port));
+            Serial.print(' ');
+        }
+        delay(3000);
+    }
+            \end{lstlisting}
+            \caption{Code used for measuring analog inputs}
+            \label{subfig:analogcode}
+        \end{subfigure}
+        %
+        \caption{Setup for the analog input measuring}
+        \label{fig:analogsetup}
+    \end{figure}
+
+    The output received was as in the following figure, ordered as A0 to A5.
+
+    \begin{verbatim}
+        ▲ sankalp ~ tail -f /dev/ttyUSB0
+
+        Values : 1023 1023 1023 511 0 0 
+        Values : 1023 1023 1023 512 0 0 
+        Values : 1023 1023 1023 769 0 0 
+        Values : 1023 1023 1023 1023 0 72 
+        Values : 1023 1023 1023 1023 512 512 
+        Values : 1023 1023 1022 1023 512 512 
+        Values : 1023 1023 1023 1023 512 512       
+    \end{verbatim}
+
+    It was interesting to see the values in the middle as I managed to read them
+    while moving wires around. Not sure if this is dangerous (hopefully not!) but
+    it was nice to see the input values changing, presumably due to a buffering
+    circuit to smooth over the input in some way?
+    
+\end{arabicparts}
+

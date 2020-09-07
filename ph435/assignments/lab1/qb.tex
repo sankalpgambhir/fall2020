@@ -1,0 +1,66 @@
+\newpage
+
+\question*{Digital I/O}
+
+\begin{arabicparts}
+    
+    \questionpart
+    With access to a DSO, the time taken to execute a digital write
+    may be obtained using a program like this:
+    
+    \begin{lstlisting}[language=C++]
+    void setup(){
+        pinMode(LED_BUILTIN, OUTPUT);
+    }
+
+    void loop(){
+        digitalWrite(LED_BUILTIN, LOW);
+        digitalWrite(LED_BUILTIN, HIGH);
+    }
+    \end{lstlisting}
+
+    The DSO probe would be connected to pin 13, corresponding to
+    the LED, and ground. The time taken for the instruction will
+    be half of the time period of the obtained (presumably square) wave.
+
+    \questionpart
+    We put the tested function in the \texttt{loop()} section (see Appendix)
+    and then monitor the output using a C++ program with the serial output 
+    pipelined into it. The C++ program was designed to count instances 
+    of an arbitrary provided string and time it with a high resolution clock.
+    
+    The following results were obtained by timing the given program:
+
+    \begin{figure}[ht]
+        \centering
+        \input{fig/timegraph}
+        \caption{Time taken to receive instances of \texttt{"01Game Over"}}
+        \label{fig:timegraph}
+    \end{figure}
+
+    Looking at the figure, the first few points are quite erratic, possibly
+    due many small erratic foactors interacting, such as transmission delay, serial
+    poling delay, etc. The data very quickly settles into a linear plot, which
+    was used to determine a best fit line of the form
+
+    $$y = mx + c$$
+    
+    with obtained values,
+
+    $$m = 1.148 \times 10^{7} \textnormal{ns}$$
+    $$c = 3.907 \times 10^{5} \textnormal{ns}$$
+
+    Thus, the average time per function run was $1.148 \times 10^{7}$ ns, i.e. \textbf{11.48 ms}.
+
+    It is also worth noting the obtained value for $c$. There seems to be a sizable
+    constant delay for each instance run. This may be attributed to the overhead
+    of the timing methodology, the buffer as well as the timing program itself.
+    It being a couple orders of magnitude smaller than the actual slope ensures
+    that our testing methodology was appropriate and did not skew the results 
+    too much. 
+
+    {\small Note --- data for less than 10 instances was not included for the best fit.}
+
+    {\small Actual data values and testing details may be found in the Appendix.}
+
+\end{arabicparts}
