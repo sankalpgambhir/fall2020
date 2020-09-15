@@ -1,0 +1,24 @@
+% is draft? display comments and notes?
+\newcounter{draft}
+\setcounter{draft}{0}
+
+% input general format
+\input{../macro}
+
+% custom symbol
+\usepackage{newunicodechar}
+\newunicodechar{▲}{\ensuremath{\blacktriangle}}
+\renewcommand{\labelenumii}{\arabic{enumii}.}
+
+% override title defaults
+\renewcommand{\hwtype}{Lab}
+\renewcommand{\hwnum}{2}
+\renewcommand{\hwdate}{September 13, 2020}
+
+\begin{document}
+    \maketitle
+
+    \input{qa}
+    \input{appendix}
+
+\end{document}
