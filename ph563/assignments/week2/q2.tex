@@ -1,0 +1,94 @@
+\begin{alphaparts}
+    \questionpart
+    We can write down the conjugacy classes and the number of elements in each using 
+    combinatorial split of 6 elements into the number of required cycles as 
+    \begin{center}
+        \begin{tabular*}{0.5\textwidth}[ht]{c c}
+            Cycle structure     &  Number of elements in class \\ 
+                             \hline
+            (6, 0, 0, 0, 0, 0)  &  1                           \\
+            (4, 1, 0, 0, 0, 0)  &  15                          \\
+            (2, 2, 0, 0, 0, 0)  &  45                          \\
+            (0, 3, 0, 0, 0, 0)  &  15                          \\
+            (3, 0, 1, 0, 0, 0)  &  40                          \\
+            (1, 1, 1, 0, 0, 0)  &  120                         \\
+            (0, 0, 2, 0, 0, 0)  &  40                          \\
+            (2, 0, 0, 1, 0, 0)  &  90                          \\
+            (0, 1, 0, 1, 0, 0)  &  90                          \\
+            (1, 0, 0, 0, 1, 0)  &  144                         \\
+            (0, 0, 0, 0, 0, 1)  &  120                         \\
+        
+        \end{tabular*}
+    \end{center}
+
+    \textbf{Left action (126)(45)(3) $\mid$ Right action (13)(24)(56).} 
+    We can calculate it simply by multiplying the individual
+    cycles to get a final cycle structure.
+
+    \questionpart
+    \begin{itemize}
+        \item \textbf{No.} \\
+        Take $b = a + 1$. There is a clear commutation violation.
+    
+        \item \textbf{$i \in \{-1, 0, +1\}$.} \\
+        Since $P_a$ is its own inverse, the operation $P_a \cdot \, \cdot P_a$
+        is simply the inner operation in a "morphed space" where $P_a$ had acted, and
+        then transorming back, the same intuition carried for similarity actions of matrices.
+        The equivalence is trivially violated if $P_a$ and $P_{a+i}$ share no common elements, and 
+        trivially holds if $i = 0$ as they are the same elements. If $i \not \in \{-1, +1\}$, i.e. 
+        in the case where there is one element is common,
+        it is easily demostrated this holds considering three elements 
+        as in Figure \ref{fig:aiswap}. It is simply a 3 element reversal.
+    \end{itemize}
+
+        \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.3\textwidth}
+                \raggedright
+                Start\\
+                $$1~~2~~3$$
+                $P_1$\\
+                $$2~~1~~3$$
+                $P_2$\\
+                $$2~~3~~1$$
+                $P_1$\\
+                $$3~~2~~1$$
+            \end{subfigure}\hspace{1cm}
+            \hspace{3cm}
+            \begin{subfigure}[b]{0.3\textwidth}
+                \raggedright
+                Start\\
+                $$1~~2~~3$$
+                $P_2$\\
+                $$1~~3~~2$$
+                $P_1$\\
+                $$3~~1~~2$$
+                $P_2$\\
+                $$3~~2~~1$$
+            \end{subfigure}
+            \caption{Similarity swapping with a common element.}
+            \label{fig:aiswap}
+        \end{figure}
+
+    \questionpart
+    The stereographic projection is as in Figure \ref{fig:schoen}.
+
+    \begin{figure}[ht]
+        \centering
+        \scalebox{0.5}{\input{fig/schoen.pdf_tex}}
+        \caption{Stereographic Projection / Schoenflies Notation.}
+        \label{fig:schoen}
+    \end{figure}
+
+    The conjugacy classes will be:
+    \begin{itemize}
+        \item $\{e\}$
+        \item $\{\cyclic_{4}, \cyclic_{4}^{3}\}$
+        \item $\{\cyclic_{2}\}$
+        \item $\{U_{2}, U_{2}\cyclic_{4}, U_{2}\cyclic_{2}, U_{2}\cyclic_{4}^{3}\}$
+        \item $\{\sigma_{d}, \sigma_{d}\cyclic_{4}, \sigma_{d}\cyclic_{2}, \sigma_{d}\cyclic_{4}^{3}\}$
+        \item $\{U_{2}\sigma_{d}, U_{2}\sigma_{d}\cyclic_{2}\}$
+        \item $\{U_{2}\sigma_{d}\cyclic_{4}, U_{2}\sigma_{d}\cyclic_{4}^{3}\}$
+    \end{itemize}
+
+\end{alphaparts}
