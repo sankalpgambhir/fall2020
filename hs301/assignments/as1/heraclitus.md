@@ -49,12 +49,13 @@ Heraclitus uses alliteration (four m-words in a row) and chiasmus (an ABBA patte
 The second word, in the dative case “to” or “for” man, stands between the names of two very unlike objects, ‘character’ and ‘deity.’  Grammatically, it can attach to either indifferently, and seems intended to be heard with both, so that it counts twice. Because of its double role, the word forms a kind of syntactic glue between the otherwise diverse subjects, joining them together in a unity.  Traditionally having a good or a bad guardian spirit constitutes one’s “luck”–one is eudaimôn or dusdaimôn, fortunate or wretched, at the mercy of one’s divine overseer. But Heraclitus turns one’s luck into a function of one’s character, one’s ethical stance, by making “man” the link.
 
 Ultimately, Heraclitus loads his words with layers of meaning and complexities that are to be discovered in insights and solved like riddles. As he implies in the second sentence of his introduction, B1, his logoi are designed to be experienced, not just understood, and only those who experience them in their richness will grasp his message.
-3. Philosophical Principles
+## Philosophical Principles
 
 Although his words are meant to provide concrete vicarious encounters with the world, Heraclitus adheres to some abstract principles which govern the world. Already in antiquity he was famous for advocating the coincidence of opposites, the flux doctrine, and his view that fire is the source and nature of all things. In commenting on Heraclitus, Plato provided an early reading, followed tentatively by Aristotle, and popular down to the present (sharpened and forcefully advocated by Barnes 1982, ch. 4). According to Barnes’ version, Heraclitus is a material monist who believes that all things are modifications of fire. Everything is in flux (in the sense that “everything is always flowing in some respects,” 69), which entails the coincidence of opposites (interpreted as the view that “every pair of contraries is somewhere coinstantiated; and every object coinstantiates at least one pair of contraries,” 70). The coincidence of opposites, thus interpreted, entails contradictions, which Heraclitus cannot avoid. On this view Heraclitus is influenced by the prior theory of material monism and by empirical observations that tend to support flux and the coincidence of opposites. In a time before the development of logic, Barnes concludes, Heraclitus violates the principles of logic and makes knowledge impossible.
 
 Obviously this reading is not charitable to Heraclitus. There are, moreover, reasons to question it. First, some of Heraclitus’ views are incompatible with material monism (to be discussed later), so that the background of his theories must be rethought. Second, there is evidence that Heraclitus’ flux theory is weaker than that attributed to him by this reading.  Third, there is evidence that his view of the coincidence of opposites is weaker than that attributed to him here. 
-3.1 Flux
+
+### Flux
 
 Barnes bases his Platonic reading on Plato’s own statement:
 
@@ -81,7 +82,8 @@ If B12 is accepted as genuine, it tends to disqualify the other two alleged frag
 In fact, Marcovich (1967) has succeeded in showing how a misreading of B12 could lead to an interpretation such as that embodied in A6 and B91[a]. It is possible to see Cratylus, a late follower of Heraclitus, supplying the wayward reading, and then adding his famous rejoinder that one cannot step into the same river even once (although the reading may go back earlier to Hippias:  Mansfeld 1990: 43–55). Since Plato is alleged to have heard Cratylus’ lectures, he may well have derived his reading from Cratylus’ criticism. 
 
 If this interpretation is right, the message of the one river fragment, B12, is not that all things are changing so that we cannot encounter them twice, but something much more subtle and profound. It is that some things stay the same only by changing. One kind of long-lasting material reality exists by virtue of constant turnover in its constituent matter. Here constancy and change are not opposed but inextricably connected. A human body could be understood in precisely the same way, as living and continuing by virtue of constant metabolism–as Aristotle for instance later understood it.  On this reading, Heraclitus believes in flux, but not as destructive of constancy; rather it is, paradoxically, a necessary condition of constancy, at least in some cases (and arguably in all). In general, at least in some exemplary cases, high-level structures supervene on low-level material flux. The Platonic reading still has advocates (e.g. Tarán 1999), but it is no longer the only reading of Heraclitus advocated by scholars.
-3.2 The Unity of Opposites
+
+### The Unity of Opposites
 
 Heraclitus’ flux doctrine is a special case of the unity of opposites, pointing to ways things are both the same and not the same over time. He depicts two key opposites that are interconnected, but not identical. Heraclitus sometimes explains how things have opposite qualities:
 
@@ -100,7 +102,8 @@ Most tellingly, Heraclitus explains just how contraries are connected:
 Contrary qualities are found in us “as the same thing.”  But they are the same by virtue of one thing changing around to another. We are asleep and we wake up; we are awake and we go to sleep. Thus sleep and waking are both found in us, but not at the same time or in the same respect. Indeed, if sleeping and waking were identical, there would be no change as required by the second sentence. Contraries are the same by virtue of constituting a system of connections: alive-dead, waking-sleeping, young-old. Subjects do not possess incompatible properties at the same time, but at different times.
 
 In general, what we see in Heraclitus is not a conflation of opposites into an identity, but a series of subtle analyses revealing the interconnectedness of contrary states in life and in the world.  There is no need to impute to him a logical fallacy. Opposites are a reality, and their interconnections are real, but the correlative opposites are not identical to each other.
-3.3 Ontology
+
+### Ontology
 
 The standard view of Heraclitus’ ontology since Aristotle is that he is a material monist who holds that fire is the ultimate reality; all things are just manifestations of fire. According to Aristotle the Milesians in general were material monists who advocated other kinds of ultimate matter: Thales water, Anaximander the boundless, Anaximenes air (Metaphysics 983b6–984a8). So Heraclitus’ theory was just another version of a common background theory. There are problems already with Aristotle’s understanding of the Milesians: Aristotle lacks any textual evidence for Thales’ view and must reconstruct it out of almost nothing; he sometimes treats Anaximander as a pluralist like Anaxagoras who thinks the boundless is a mixture of qualities; at most Anaximenes might exemplify material monism–but Plato reads him as a pluralist (Timaeus 39 with Graham 2003b; Graham 2003a). In the case of Heraclitus, his own statements make material monism problematic as an interpretation. According to material monism, some kind of matter is the ultimate reality, and any variation in the world consists merely of qualitative or possibly quantitative change in it; for there is only one reality, for instance fire, which can never come into existence or perish, but can only change in its appearances. Heraclitus, however, advocates a radical kind of change:
 
@@ -109,7 +112,8 @@ The standard view of Heraclitus’ ontology since Aristotle is that he is a mate
 (Here soul seems to occupy the place of fire.)  The language of birth and death in the world of living things is precisely the language used in Greek metaphysics for coming to be and perishing. It implies a radical transformation that rules out continuing identity (cf. B76, B62). Indeed, interpreters of Heraclitus cannot have it both ways: Heraclitus cannot be both a believer in radical flux (the change of everything into everything else: fire into water, water into earth, and so on) and an advocate of monism. Either he must believe in a merely illusory or at most a limited kind of change, or he must be a pluralist. 
 
 One further difficulty remains for the monist reading. In his alleged version of monism, fire is the ultimate reality. Yet fire (as the ancients recognized) is the least substantial and the most evanescent of elemental stuffs. It makes a better symbol of change than of permanence. Other alleged cases of material monism offer a basic kind of matter that could arguably be stable and permanent over long periods of time; but fire manifests “need and satiety” (B65), a kind of ongoing consumption that can live only by devouring fuel. Is not Heraclitus’ choice of a basic reality itself paradoxical?  At best his appeal to fire seems to draw on material monism in a way that points beyond the theory to an account  in which the process of change is more real than the material substances that undergo change.
-4. Cosmology
+
+## Cosmology
 
 Although Heraclitus is more than a cosmologist, he does offer a cosmology. His most fundamental statement on cosmology is found in B30:
 
@@ -142,7 +146,8 @@ The fiery shaft of lightning is a symbol of the direction of the world. Anaximan
 Heraclitus provided some sort of discussion of meteorological and astronomical phenomena. He studied the disappearance and reappearance of the moon at the end and beginning of a month (Oxyrhynchus Papyri LIII 3710 ii. 43–47 and iii. 7–11–the clearest evidence that Heraclitus had a scientific interest in astronomy). He explained the sun and moon as bowls full of fire. As the moon’s bowl rotated it caused the phases. Eclipses were the result of a rotation of the convex side of the bowls to face the earth. We have no reports about the earth itself, but we may suppose that, like his predecessors, Heraclitus viewed it as flat. Evaporations from the earth and sea apparently provided fuel for the heavenly bodies, which burned like oil lamps. 
 
 Divine power is manifest in all phenomena: “God is day night, winter summer, war peace, satiety hunger, and he alters just as <fire> when it is mixed with spices is named according to the aroma of each of them” (B67). Again Heraclitus seems to stress the unity of divine power, even if humans assign different names and attributes to it. All things that happen are good, but humans do not perceive them to be so: “To God all things are fair, good and just, but men suppose some things are unjust, some just” (B102). Heraclitus does not attempt to provide a detailed theodicy, but seeks to view all things sub specie aeternitatis, in which conflict (including presumably human conflict) keeps the world going (B80, cited above). 
-5. Knowledge
+
+## Knowledge
 
 Plato held that for Heraclitus knowledge is made impossible by the flux of sensible objects. Yet Heraclitus does not repudiate knowledge or the wisdom that comes from a proper understanding of the world. To be sure, he believes most people are not capable of wisdom; understanding is a rare and precious commodity, which even most reputed sages do not attain to (B28[a]). Yet wisdom is possible, and it is embodied in Heraclitus’ message, for those who can discern it.
 
@@ -161,7 +166,8 @@ Heraclitus often presents a simple concrete situation or image which has implica
     The Lord whose oracle is at Delphi neither reveals nor conceals, but gives a sign. (B93) 
 
 The riddling statements of the Delphic oracle do not provide straightforward answers, but force people to interpret them. His truths come to the attentive reader as discoveries resulting from the solution of a puzzle.
-6. Value
+
+## Value
 
 The aim of Heraclitus’ unusual approach is to produce readers who have a proper grasp of the world and their place in it.  “Sound thinking is the greatest virtue and wisdom: to speak the truth and to act on the basis of an understanding of the nature of things” (B112). Such an understanding can result only from an ability to interpret the language of nature. The proper understanding allows one to act in a harmonious way.
 
@@ -176,12 +182,14 @@ Evidently he trusts the few and distrusts the many. He sees good laws as being r
     Speaking with sense we must fortify ourselves in the common sense of all, as a city is fortified by its law, and even more forcefully.  For all human laws are nourished by the one divine law. For it prevails as far as it will and suffices for all and is superabundant. (B114) 
 
 The divine law, on Heraclitus’ view, is probably continuous with the laws governing the cosmos, which maintain justice through opposition (B80).
-7. Influence
+
+## Influence
 
 Although Heraclitus is not known to have had students, his writings seem to have been influential from an early time. He may have provoked Parmenides to develop a contrasting philosophy (Patin 1899; Graham 2002), although their views have much more in common than is generally recognized (Nehamas 2002). Empedocles seems to have invoked Heraclitean themes, and some Hippocratic treatises imitated Heraclitean language and presented applications of Heraclitean themes. Democritus echoed many of Heraclitus’ ethical pronouncements in his own ethics. From an early time Heraclitus was seen as the representative of universal flux in contrast to Parmenides, the representative of universal stasis. Cratylus brought Heraclitus’ philosophy to Athens, where Plato heard it.  Plato seems to have used Heraclitus’ theory (as interpreted by Cratylus) as a model for the sensible world, as he used Parmenides’ theory for the intelligible world. As mentioned, both Plato and Aristotle viewed Heraclitus as violating the law of non-contradiction, and propounding an incoherent theory of knowledge based on a radical flux. Yet Aristotle also treated him as a coherent material monist who posited fire as an ultimate principle. The Stoics used Heraclitus’ physics as the inspiration for their own, understanding him to advocate a periodic destruction of the world by fire, followed by a regeneration of the world; Cleanthes in particular commented on Heraclitus.  Aenesidemus interpreted Heraclitus as a kind of proto-skeptic (see Polito 2004). 
 
 Ever since Plato, Heraclitus has been seen as a philosopher of flux. The challenge in interpreting the philosopher of Ephesus has always been to find a coherent theory in his paradoxical utterances. Since Hegel, he has been seen as a paradigmatic process philosopher–perhaps with some justification. 
-8. Addendum
+
+## Addendum
 
 The recently published Derveni Papyrus, discovered in a tomb in northern Greece, contains a commentary on an Orphic poem. The commentator discusses some passages of Heraclitus in connection with the poem, namely B3 + B94 (which may have been thus joined in Heraclitus’ book) (column 4). See Betegh 2004. The Oxyrhynchus Papyri (vol. 53, no. 3710) also show that Heraclitus was interested in determining the days of the lunar month and thus in scientific questions. See Burkert 1993.
 
