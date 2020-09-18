@@ -1,0 +1,11 @@
+# Heraclitus Notes for Essay 
+## Pushkar's Initial notes on pages 1-100 of The Art and thought of Heraclitus
+- Very little direct quotation/ sources available. Have to rely on commentaries / scraps of translation. 
+- The stoics derived their philosophy from a deep contemplation of Heraclitus work, though there was some deformation in the process.
+- He had a lot of contempt for his contemporories, esp. Pythagoras. 
+- His work contains a lot of chastising of his society. He felt that they were too opinionated and naive and fooled by poets. 
+- The most important characterization of his philosophy is in the reconcilliation of the dualiities that contrants visible in life and nature. He does this through multiple ways. Like the fact that hunger is the reason we value satiety, war is the reason we value peace. He seeks to reconcile the notion of justice with that of war and violence. 
+- Heraclitus has a deep exposition on the nature of death and it's dualities with life. Reconciling the fact that life comes to an end in a philosophical structure was important to him 
+- He doesn't do much work on natural physics . His main idea of cosmology is that the sun is a foot long ball of fire that disappears and is born anew each morning, in an immutable cycle. 
+- His theology deviates significantly from that of established greek ideas. Unlike Homer who essentially anthropomorphizes the gods and forces of nature, assigning to them human qualities, Heraclitus argues that there is one unifying divine/ cosmic force that is incomprehensible to humans, That it has values that we cannot ever attain. He does this by comparing Gods to humans as humans are to apes, that the most beautiful ape still doesn't compare in beauty of intellect to the average human. 
+- His views on deontology flow from this. He argues that there is a single unifying cosmic order that governs values such as justice and that individual value and justice should to aligned to this cosmic order. This is where he achieves his unification of the duality between the responsibility one has to the society and the state and the personal need for valour and glory that the greeks prized. He argued that the only valuable glory and valour is one which is consistent with the divine order. 
