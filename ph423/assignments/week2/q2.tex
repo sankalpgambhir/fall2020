@@ -1,3 +1,261 @@
-\question*{Your question here.}
+\newcounter{draft}
+\setcounter{draft}{1}
+\newcommand{\unitvectorn}{\hat{\textbf{n}}}
+\newcommand{\sigmavector}{\boldsymbol{\sigma}}
 
-\parth{I got this one.}
+\input{common.tex}
+
+\begin{document}
+
+    \parth{Doing question 2, might have issues with part (b) make sure that it's correct}
+
+    \question*{Determine the eigenvalues and eigenvectors of the 2 x 2 matrix $\sigmavector$.$\unitvectorn$ , where $\unitvectorn$ is a unit vector along the $(\theta, \phi)$ direction and $\sigmavector$ are the three Pauli matrices. This is basically the projection of the spin 1/2 operator (apart from $\frac{\hbar}{2}$) along the direction of the unit vector $\unitvectorn$. Do this in two ways: }
+
+    \textbf{(a).} First by explicitly diagonalizing the matrix $\sigmavector$.$\unitvectorn$.
+    \hrule
+
+    The vector $\sigmavector$ = $(\sigma_{1}, \sigma_{2}, \sigma_{3})$, where the $\sigma_{i}$ matrices are -
+
+    \begin{equation*}
+        \sigma_{1} = 
+        \begin{pmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{pmatrix},
+        \sigma_{2} = 
+        \begin{pmatrix}
+            0 & -i \\
+            i & 0
+        \end{pmatrix},
+        \sigma_{3} = 
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & -1
+        \end{pmatrix}
+    \end{equation*}
+
+    Now we need to figure out what $\unitvectorn$ is. The unit vector points along the $(\theta, \phi)$ direction. This is nothing but the unit vector $\hat{\mathbf{r}}$ in Polar co-ordinates.
+    \begin{equation*}
+        \unitvectorn = \boldsymbol{\hat{r}} = \textrm{cos}(\phi)\textrm{sin}(\theta)\mathbf{\hat{i}} + \textrm{sin}(\phi)\textrm{sin}(\theta)\mathbf{\hat{j}} + \textrm{cos}(\theta)\mathbf{\hat{k}}
+    \end{equation*}
+
+    Thus, $\hat{\mathbf{n}}$ = $(\textrm{cos}(\phi)\textrm{sin}(\theta), \textrm{sin}(\phi)\textrm{sin}(\theta), \textrm{cos}(\theta))$. We know that $\mathbf{a}.\mathbf{b}$ = $a_{i}b_{i}$ (implicit summation over i)\\
+    Thus, $\sigmavector$.$\unitvectorn$ = $\sigma_{i}n_{i}$.
+    \begin{gather*}
+        \sigmavector.\unitvectorn = \textrm{cos}(\phi)\textrm{sin}(\theta)
+        \begin{pmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{pmatrix} + \textrm{sin}(\phi)\textrm{sin}(\theta)
+        \begin{pmatrix}
+            0 & -i \\
+            i & 0
+        \end{pmatrix} + \textrm{cos}(\theta)
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & -1
+        \end{pmatrix} \\
+        \therefore \sigmavector.\unitvectorn = \textrm{sin}(\theta)
+        \begin{pmatrix}
+            0 & \textrm{cos}(\phi) - i*\textrm{sin}(\phi) \\
+            \textrm{cos}(\phi) + i*\textrm{sin}(\phi) & 0
+        \end{pmatrix} + \textrm{cos}(\theta)
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & -1
+        \end{pmatrix} \\
+        = \textrm{sin}(\theta)
+        \begin{pmatrix}
+            0 & e^{-i\phi} \\
+            e^{i\phi} & 0
+        \end{pmatrix} + \textrm{cos}(\theta)
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & -1
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            \textrm{cos}(\theta) & \textrm{sin}(\theta)e^{-i\phi} \\
+            \textrm{sin}(\theta)e^{i\phi} & -\textrm{cos}(\theta)
+        \end{pmatrix}
+    \end{gather*}
+
+    To find the eigenvalues and eigenvectors, we now need to diagonalize this matrix. Let the eigenvalues be represented by $\lambda$. The characteristic polynomial takes the following form.
+    \begin{gather*}
+        (\textrm{cos}(\theta) - \lambda)(-\textrm{cos}(\theta) - \lambda) - \textrm{sin}(\theta)e^{-i\phi}*\textrm{sin}(\theta)e^{i\phi} = 0 \\
+        \therefore -\textrm{cos}^{2}(\theta) + \lambda^{2} - \textrm{sin}^{2}(\theta) = 0  \Rightarrow \lambda^{2} - 1 = 0 \\
+        \therefore \lambda = \pm 1
+    \end{gather*}
+
+    for $\lambda = 1$, let the eigenvector be $\mathbf{v_{1}} = (v_{1,1}, v_{1,2})$, thus 
+    
+    \begin{gather*}
+        \begin{pmatrix}
+            \textrm{cos}(\theta) & \textrm{sin}(\theta)e^{-i\phi} \\
+            \textrm{sin}(\theta)e^{i\phi} & -\textrm{cos}(\theta)
+        \end{pmatrix}
+        \begin{pmatrix}
+            v_{1,1} \\
+            v_{1,2}
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            v_{1,1} \\
+            v_{1,2}
+        \end{pmatrix} \\
+        \therefore \textrm{cos}(\theta)*v_{1,1} + \textrm{sin}(\theta)e^{-i\phi}*v_{1,2} = v_{1,1} \; , \; \textrm{sin}(\theta)e^{i\phi}*v_{1,1} - \textrm{cos}(\theta)*v_{1,2} = v_{1,2} \\
+        v_{1,2} = e^{i\phi}\frac{\textrm{sin}(\theta)}{(\textrm{cos}(\theta) + 1)}*v_{1,1} \\
+    \end{gather*}
+
+    Thus, for eigenvalue $\lambda = 1$, the eigenvector $\mathbf{v_{1}} = (v_{1,1}, e^{i\phi}\frac{\textrm{sin}(\theta)}{(\textrm{cos}(\theta) + 1)}*v_{1,1})$
+
+    Likewise, for $\lambda = -1$, let the eigenvector be $\mathbf{v_{2}} = (v_{2,1}, v_{2,2})$, thus
+
+    \begin{gather*}
+        \begin{pmatrix}
+            \textrm{cos}(\theta) & \textrm{sin}(\theta)e^{-i\phi} \\
+            \textrm{sin}(\theta)e^{i\phi} & -\textrm{cos}(\theta)
+        \end{pmatrix}
+        \begin{pmatrix}
+            v_{2,1} \\
+            v_{2,2}
+        \end{pmatrix} = 
+        \begin{pmatrix}
+            -v_{2,1} \\
+            -v_{2,2}
+        \end{pmatrix} \\
+        \therefore \textrm{cos}(\theta)*v_{2,1} + \textrm{sin}(\theta)e^{-i\phi}*v_{2,2} = -v_{2,1}, \textrm{sin}(\theta)e^{i\phi}*v_{2,1} - \textrm{cos}(\theta)*v_{2,2} = -v_{2,2} \\
+        v_{2,2} = e^{i\phi}\frac{\textrm{sin}(\theta)}{(1 - \textrm{cos}(\theta))}*v_{2,1} \\
+    \end{gather*}
+
+    Thus, for eigenvalue $\lambda = -1$, the eigenvector $\mathbf{v_{2}} = (v_{2,1}, e^{i\phi}\frac{\textrm{sin}(\theta)}{(1 - \textrm{cos}(\theta))}*v_{2,1})$.\\
+    We thus have our two eigenvalues ($\pm 1$) and our two eigenvectors ($\mathbf{v_{1}}$ and $\mathbf{v_{2}}$) \\
+    \hrule
+
+    \textbf{(b).} By rotating the spinor pointing initially along the $+\hat{\mathbf{z}}$ axis direction by appropriate angles, u\textrm{sin}g the appropriate rotation operator. Convince yourself that one has to rotate by an angle $\theta$ counterclockwise around the \textit{y}-axis and then by $\phi$ around the \textit{z}-axis. Apart from overall phases, is the resultant spinor the same as the spin up eigenvector obtained in part \textbf{(a)}? 
+    \hrule  
+
+    Let's start with the spinor pointing in the +\textit{z}-direction.
+
+    \begin{equation*}
+        \ket{s_{z} = +\frac{\hbar}{2}} = 
+        \begin{bmatrix}
+            1 \\
+            0
+        \end{bmatrix}, \; s.t \;  S_{z}\ket{s_{z} = +\frac{\hbar}{2}} = +\frac{\hbar}{2}\ket{s_{z} = +\frac{\hbar}{2}}
+    \end{equation*}
+
+    If we apply consecutive rotation operators, we should be able to rotate this spinor into a general state, pointing in an arbitrary direction $\unitvectorn$, where $\unitvectorn$ points in the $(\theta, \phi)$ direction. \\
+    We first rotate this spinor by $\theta$ around the \textit{y}-axis, and then by $\phi$ around the \textit{z}-axis. The axis of spin now points in the direction $\unitvectorn$. Thus - 
+
+    \begin{equation*}
+        \ket{\hat{n}+} = U[R(\phi\hat{\mathbf{z}})]U[R(\theta\hat{\mathbf{y}})]
+        \begin{bmatrix}
+            1 \\
+            0
+        \end{bmatrix}
+    \end{equation*}
+
+    To find the explicit form of $\ket{\hat{n}+}$, we'll need the forms of the unitary matrices $U[R(\phi\hat{\mathbf{z}})]$ and $U[R(\theta\hat{\mathbf{y}})]$. We'll use the result given in Shankar - 
+
+    \begin{equation*}
+            U[R(\boldsymbol{\theta}] = \textrm{cos}\frac{\theta}{2}I - i\textrm{sin}\frac{\theta}{2}(\hat{\theta}.\boldsymbol{\sigma})
+    \end{equation*}
+
+    Looking at the particular case of rotation around \textit{y}-axis by amount $\theta$ and then subsequently around \textit{z}-axis by amount $\phi$ - 
+
+    \begin{equation*}
+        \begin{split}
+            U[R(\theta\hat{\mathbf{y}})]
+            \begin{bmatrix}
+                1 \\
+                0
+            \end{bmatrix} & = \left[ \textrm{cos}\frac{\theta}{2}I - i \, \textrm{sin}\frac{\theta}{2}\sigma_{y}\right]
+            \begin{bmatrix}
+                1 \\
+                0
+            \end{bmatrix} \\
+            & = 
+            \begin{bmatrix}
+                \textrm{cos}\frac{\theta}{2} \\
+                0
+            \end{bmatrix} - i \, \textrm{sin}\frac{\theta}{2}
+            \begin{bmatrix}
+                0 & -i \\
+                i & 0
+            \end{bmatrix}
+            \begin{bmatrix}
+                1 \\
+                0
+            \end{bmatrix} \\
+            & = 
+            \begin{bmatrix}
+                \textrm{cos}\frac{\theta}{2} \\
+                \textrm{sin}\frac{\theta}{2}
+            \end{bmatrix}
+        \end{split}
+    \end{equation*}
+
+    Applying rotation around \textit{z}-axis by amount $\phi$ now, we get 
+    \begin{equation*}
+        \begin{split}
+            U[R(\phi\hat{\mathbf{z}})]
+            \begin{bmatrix}
+                \textrm{cos}\frac{\theta}{2} \\
+                \textrm{sin}\frac{\theta}{2}
+            \end{bmatrix} & = \left[ \textrm{cos}\frac{\phi}{2}I - i \, \textrm{sin}\frac{\phi}{2}\sigma_{z} \right]
+            \begin{bmatrix}
+                \textrm{cos}\frac{\theta}{2} \\
+                \textrm{sin}\frac{\theta}{2}
+            \end{bmatrix} \\
+            & = 
+            \begin{bmatrix}
+                \textrm{cos}\frac{\phi}{2}\textrm{cos}\frac{\theta}{2} \\
+                \textrm{cos}\frac{\phi}{2}\textrm{sin}\frac{\theta}{2}
+            \end{bmatrix} - i \, \textrm{sin}\frac{\phi}{2}
+            \begin{bmatrix}
+                1 & 0 \\
+                0 & -1
+            \end{bmatrix}
+            \begin{bmatrix}
+                \textrm{cos}\frac{\theta}{2} \\
+                \textrm{sin}\frac{\theta}{2}
+            \end{bmatrix} \\
+            & = 
+            \begin{bmatrix}
+                \textrm{cos}\frac{\theta}{2} \left( \textrm{cos}\frac{\phi}{2} - i \, \textrm{sin}\frac{\phi}{2}\right) \\
+                \textrm{sin}\frac{\theta}{2} \left( \textrm{cos}\frac{\phi}{2} + i \, \textrm{sin}\frac{\phi}{2} \right)
+            \end{bmatrix} \\
+            & = 
+            \begin{bmatrix}
+                \textrm{cos}\frac{\theta}{2}e^{-i\frac{\phi}{2}} \\
+                \textrm{sin}\frac{\theta}{2}e^{i\frac{\phi}{2}}
+            \end{bmatrix}
+        \end{split}
+    \end{equation*}
+
+    This gives us a spinor $s_{n} = (s_{n1}, s_{n2}) = (\textrm{cos}\frac{\theta}{2}e^{-i\frac{\phi}{2}}, \textrm{sin}\frac{\theta}{2}e^{i\frac{\phi}{2}})$. If we recall our $\mathbf{v_{1}} = (v_{1,1}, v_{1,2})$ from part \textbf{(a)}, we recall the relation we obtained at the end.
+
+    \begin{equation*}
+        v_{1,2} = e^{i\phi}\frac{\textrm{sin}(\theta)}{(\textrm{cos}(\theta) + 1)}*v_{1,1}
+    \end{equation*}
+
+    Substituting $v_{1,1} = s_{n1} = \textrm{cos}\frac{\theta}{2}e^{-i\frac{\phi}{2}}$ (as our final spinor seems to suggest), we get - 
+
+    \begin{equation*}
+        \begin{split}
+            v_{1,2} & = e^{i\phi}\frac{\textrm{sin}(\theta)}{(\textrm{cos}(\theta) + 1)}*v_{1,1} \\
+            & = e^{i\phi}\frac{\textrm{sin}(\theta)}{(\textrm{cos}(\theta) + 1)}*\textrm{cos}\frac{\theta}{2}e^{-i\frac{\phi}{2}} \\
+        \end{split}
+    \end{equation*}
+
+    Recall $1 + \textrm{cos}(A) = 2*\textrm{cos}^{2}(\frac{A}{2})$ and $\textrm{sin}(A) = 2*\textrm{sin}(\frac{A}{2})\textrm{cos}(\frac{A}{2})$
+
+    \begin{equation*}
+        \begin{split}
+            e^{i\phi}\frac{\textrm{sin}(\theta)}{(\textrm{cos}(\theta) + 1)}*\textrm{cos}\frac{\theta}{2}e^{-i\frac{\phi}{2}} & = e^{i\frac{\phi}{2}}\frac{\textrm{sin}(\theta)}{2cos^{2}(\frac{\theta}{2})}*\textrm{cos}\frac{\theta}{2} \\
+            & = e^{i\frac{\phi}{2}}\frac{2\textrm{sin}(\frac{\theta}{2})\textrm{cos}(\frac{\theta}{2})}{2cos^{2}(\frac{\theta}{2})}*\textrm{cos}\frac{\theta}{2} \\
+            & = e^{i\frac{\phi}{2}}\textrm{sin}(\frac{\theta}{2}) = s_{n2}
+        \end{split}
+    \end{equation*}
+
+    Therefore, apart from phase factors, the resultant spinor is the same as the spin up eigenvector we got in part \textbf{(a)}.
+\end{document}
