@@ -1,4 +1,6 @@
-\question*{Your question here.}
+\question*{Calculate the expectation values of $\Angularmomentum_x$, $\Angularmomentum_y$,
+$\Angularmomentum_x ^2$ and $\Angularmomentum_y ^2$ in the angular momentum states $\ket{j, m}$. 
+Explain the result geometrically. (Using symmetry arguments may help).}
 
 \sankalp{I got this one.}
 
@@ -42,10 +44,12 @@ we get
             + \Angularmomentum_- \Angularmomentum_+ + \Angularmomentum_- ^2)}{j, m} \\
     &= \expectationvalue{\frac{1}{4} \cdot (\Angularmomentum_+ \Angularmomentum_-
             + \Angularmomentum_- \Angularmomentum_+)}{j, m} \\
-    &= \bra{j, m}~\frac{1}{2} \cdot \left(\sqrt{(j + m + 1)(j - m)}\sqrt{(j - m)(j + m + 1)} \right.\nonumber \\
+    &= \bra{j, m}~\frac{\hbar ^2}{4} \cdot \left(\sqrt{(j + m + 1)(j - m)}\sqrt{(j - m)(j + m + 1)} \right.\nonumber \\
         &\quad\left. + \sqrt{(j - m)(j + m + 1)}\sqrt{(j + m + 1)(j - m)}~\right) \cdot \ket{j, m} \\
-    &= (j + m + 1)(j - m)
+    &= \frac{\hbar ^ 2}{2}(j + m + 1)(j - m)
 \end{align}
 
 The values for x and y are not separately calculated as a trivial calculation shows they're equal. The 
-same is easily argued using symmetry in the x-y plane.
+same is easily argued using symmetry in the x-y plane. This symmetry also serves as an explanation for the
+expectation value, since there is similarly a reflection symmetry about either axis, the expectation cannot
+favor either $\pm$ x or $\pm$ y.
