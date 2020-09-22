@@ -23,4 +23,3 @@
 ## Fundamental ontology 
 - He argues that the order of night of day and the precision of the cycle is fundamentally enforced by some Cosmic Justice itself, which he attritubutes to god, moving away from standard theology. He uses this cycle to introduce the notion of unity of opposites and paradoxes: Night and day are merely parts of a single universal cycle. [PG109]
 - He focuses on the duality between logic of man and the fundamental order of the universe through the dual use of the word Logos to describe both. 
--  
