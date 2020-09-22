@@ -1,3 +1,85 @@
-\question*{Your question here.}
+\newcounter{draft}
+\setcounter{draft}{1}
 
-\parth{I got this one.}
+\input{common.tex}
+
+\begin{document}
+
+    \parth{Doing question 5, I'm not spending as much time on this as question 2}
+
+    \question*{Prove that any function of the radial coordinate $f(r)$ where $r = |\mathbf{r}|$ and \textbf{X} · \textbf{P}, where \textbf{X} and \textbf{P} are the position and momentum operators, are both scalar operators.}
+
+    Under a symmetry operator $U$, operators change as $\mathcal{O}' = U^{\dagger}\mathcal{O}U$. A scalar operator being one which is invariant under rotations, i.e
+    \begin{equation*}
+        S' = U^{\dagger}[R]SU[R] = S
+    \end{equation*}
+
+    where $U(R(\boldsymbol{\alpha}) = e^{-\frac{i}{\hbar}\boldsymbol{\alpha}.\mathbf{J}})$. \\
+    By considering infinitesimal rotations $\boldsymbol{\alpha} = \boldsymbol{\epsilon}$, we have 
+
+    \begin{equation*}
+        U[R(\boldsymbol{\alpha})] = \left( 1 - \frac{i}{\hbar}\epsilon_{i}J_{i}\right)
+    \end{equation*}
+
+    Thus, our definition for a scalar operator becomes - 
+
+    \begin{equation*}
+        S' = \left( 1 + \frac{i}{\hbar}\epsilon_{i}J_{i}\right)S\left( 1 - \frac{i}{\hbar}\epsilon_{i}J_{i}\right) = S
+    \end{equation*}
+
+    which gives us $\frac{i}{\hbar}\epsilon_{i}\left[ J_{i},S \right] = 0$. Since $\boldsymbol{\epsilon}$ was an arbitrary choice, we have 
+
+    \begin{equation*}
+        \left[ J_{i},S \right] = 0
+    \end{equation*}
+
+    as our definition of a scalar operator.
+
+    Considering $f(r)$, where $r = |\mathbf{r}|$ as our operator.
+
+    \begin{equation*}
+        \left[ J_{i},f(r) \right] = \left[ J_{i},r \right]*f'(r)
+    \end{equation*}
+
+    $r = \sqrt{\sum_{i=1}^{3}X_{i}^{2}}$, Thus
+
+    \begin{equation*}
+        \left[ J_{i},r \right] = \left[ J_{i},X_{1} \right]*\frac{X_{1}}{r} + \left[ J_{i},X_{2} \right]*\frac{X_{2}}{r} + \left[ J_{i},X_{3} \right]*\frac{X_{3}}{r}
+    \end{equation*}
+
+    we know that $\left[ J_{i}, X_{j}\right] = i\hbar\epsilon_{ijl}X_{l}$. Thus
+
+    \begin{equation*}
+        \left[ J_{i},r \right] = \left[ J_{i},X_{j} \right]*\frac{X_{j}}{r} = \frac{1}{r}\left(i\hbar\epsilon_{ijl}X_{l}X_{j}\right)
+    \end{equation*}
+
+    \begin{equation*}
+        \epsilon_{ijl}X_{l}X_{j} = \left[ X_{l},X_{j}\right] = 0 (l \neq j) \Rightarrow \left[ J_{i},r \right] = 0
+    \end{equation*}
+
+    Thus, since $\left[ J_{i},r \right] = 0$, we have $\left[ J_{i},f(r) \right] = \left[ J_{i},r \right]*f'(r) = 0*f'(r) = 0$.\\
+    Thus, $f(r)$ is a scalar operator.\\
+
+    Now considering $O =$ \textbf{X} . \textbf{P} as our operator, we need to show $ \left[ J_{i},O \right] = 0 $
+
+    \begin{equation*}
+        \mathbf{X}.\mathbf{P} = X_{i}P_{i} \qquad {\text{implicit summation}}
+    \end{equation*}
+        \begin{equation*}
+        \begin{split}
+            \therefore \left[ J_{i},O \right] & = \left[ J_{i}, X_{j}P_{j} \right] \\
+            & = \left[ J_{i}, X_{j} \right]P_{j} + X_{j}\left[ J_{i}, P_{j} \right] \\
+            & = i\hbar\epsilon_{ijl}(X_{l}P_{j} + X_{j}P_{l})
+        \end{split}
+    \end{equation*}
+
+    Now, $\epsilon_{ijl}X_{l}P_{j} = [X_{l}, P_{j}]$ for $l \neq j$, but $[X_{l}, P_{j}] = 0, l \neq j$. Thus
+
+    \begin{equation*}
+            i\hbar\epsilon_{ijl}(X_{l}P_{j} + X_{j}P_{l}) = 0 \Rightarrow [J_{i}, O] = 0
+    \end{equation*}
+
+    Since $[J_{i}, O] = 0$, we can say that the operator $O$ is a scalar operator.\\
+    Thus, \textbf{X}.\textbf{P} is a scalar operator
+
+\end{document}
