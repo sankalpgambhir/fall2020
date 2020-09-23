@@ -1,3 +1,66 @@
-\question*{Your question here.}
+\question
 
 \sahas{I got this one.}
+
+We know that the $\mathbf{X}_i$ operators can be written in terms of the spherical tensor operators as follows: (notation is the same as that used in Shankar, Principles of Quantum Mechanics, 2ed, page 419)
+
+\begin{equation}
+    \begin{split}
+        V^{+1}_1 &= \frac{i \mathbf{X}_y - \mathbf{X}_x}{\sqrt{2}} \\
+        V^0_1 &= \mathbf{X}_z \\
+        V^{-1}_1 &= -\frac{\mathbf{X}_x + i \mathbf{X}_y}{\sqrt{2}} 
+    \end{split}
+\end{equation}
+
+Thus in general any linear combination of the $\mathbf{X}_i$s can be written in terms of the $V^i_1$s. Note that $\mathbf{\epsilon} \cdot \mathbf{X}$ is exactly such a linear combination. Thus we may write 
+
+\begin{equation}
+    \hat{O} = \mathbf{\epsilon} \cdot \mathbf{X} = \alpha_i V^i_1
+\end{equation}
+    
+Where the $\alpha_i$ are scalars, and summation over repeated values is implied. 
+
+Using this form we can write the transition probability for the Hydrogen atom as
+
+\begin{equation}
+    \abs{\bra{n',l',m'} \alpha_i V^i_1 \ket{n,l,m}}
+\end{equation}
+
+Now since each $V^i_1$, acting on $ \ket{n,l,m}$ can either:
+\begin{itemize}
+    \item Increase the value of $l$ by 1
+    \item Decrease the value of $l$ by 1
+    \item Keep the value of $l$ unchanged
+\end{itemize}
+
+Or give a superposition of the above. Since states of different $l$ are orthogonal, $\alpha_i V^i_1 \ket{n,l,m}$ and $\bra{n',l',m'}$ won't have any common terms unless $\abs{l - l'} = 1$ or $l = l'$. 
+
+Thus we get the relation 
+
+\begin{equation}
+    \abs{\bra{n',l',m'} \alpha_i V^i_1 \ket{n,l,m}} = 0 
+\end{equation}
+
+Unless  $\abs{l - l'} = 1$ or $l = l'$. 
+
+\begin{equation}
+    \abs{\bra{n',l,m'} \mathbf{\epsilon} \cdot \mathbf{X} \ket{n,l,m}} = \abs{\bra{n',l',m'} P^{\dagger} \mathbf{\epsilon}\cdot \mathbf{X}  P  \ket{n,l,m}} 
+\end{equation}
+
+Since $\ket{n,l,m}$ transforms as $\ket{n,l,m} \longrightarrow (-1)^l \ket{n,l,m}$ under parity,
+
+\begin{equation}
+    (-1)^{l' + l}\bra{n',l',m'} \mathbf{\epsilon} \cdot \mathbf{X} \ket{n,l,m} = \bra{n',l',m'} P^\dagger  \mathbf{\epsilon}\cdot \mathbf{X} P \ket{n,l,m}
+\end{equation}
+
+Since $ \mathbf{X}  $ transforms as $ \mathbf{X}   \longrightarrow - \mathbf{X}  $ under parity, we get
+
+\begin{equation}
+    (-1)^{l' + l}\bra{n',l',m'} \mathbf{\epsilon} \cdot \mathbf{X} \ket{n,l,m} = -\bra{n',l',m'}  \mathbf{\epsilon}\cdot \mathbf{X}\ket{n,l,m}
+\end{equation}
+
+Hence if $l + l'$ is even (i.e. when $l = l'$), we get 
+
+\begin{equation}
+    \bra{n',l',m'} \mathbf{\epsilon} \cdot \mathbf{X} \ket{n,l,m} = 0
+\end{equation}

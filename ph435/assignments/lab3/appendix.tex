@@ -1,0 +1,38 @@
+\newpage
+{\large Appendix}
+\hrule
+\label{appendix}
+
+\textbf{DAC}
+
+The code uploaded to the Arduino for testing the DAC alone. Delays were introduced
+manually to see the changes in the output clearly. It can also be seen without the delay,
+by keeping the print there, but this is just clearer.
+
+\begin{lstlisting}[language=C++]
+void setup(){
+    Serial.begin(1000000); // why not
+    for(int i = 2; i < 6; i++){
+        pinMode(i, OUTPUT);
+    }
+}
+
+void loop(){
+    for(int i = 2; i < 5; i++){
+        digitalWrite(i, HIGH);
+        delay(500); // manually add delay
+        Serial.println(5 * (analogRead() / 1023.0)); // measured Vout in Volts
+    }
+}
+    
+\end{lstlisting}
+
+\textbf{VCCS}
+\label{appendix:arduino}
+
+The code uploaded to the Arduino for testing the DAC and the VCCS. We iterate 
+from a value corresponding to a value below threshold to one well above it, while
+making sure to not modify \texttt{Rx/Tx} pins (0 and 1).
+
+\lstinputlisting[language=C++]{code/lab3.ino}
+

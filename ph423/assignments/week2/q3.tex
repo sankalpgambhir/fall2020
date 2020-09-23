@@ -1,3 +1,140 @@
-\question*{Your question here.}
+\question
 
 \sahas{I got this one.}
+
+\begin{alphaparts}
+    
+\questionpart
+\textbf{Construct the matrices $\Angularmomentum_x$ and $\Angularmomentum_y$ for a particle with 
+spin one, $j = 1$ (of course $\Angularmomentum_z$ is already diagonal with eigenvalues $\hbar, 0, -\hbar$).} 
+
+We can write the $J_x$ operator as $\frac{J_+ + J_-}{2}$. We can write the matrix elements of this matrix in the $\bra{j,m}$ basis as $\bra{j,m'} \frac{J_+ + J_-}{2} \ket{j,m}$. Note that this matrix element will vanish if $m' = m$ or $\abs{m' - m} > 1$. This gives us the following matrix for $\frac{J_+ + J_-}{2}$, when the basis elements are $\ket{-1}$, $\ket{0}$, $\ket{+1}$, in that order.
+
+\begin{equation}
+    \begin{bmatrix}
+    0 & a & 0 \\
+    b & 0 & c \\
+    0 & d & 0 \\
+    \end{bmatrix}
+\end{equation}
+
+Now
+
+\begin{equation}
+    \begin{split}
+        a &= \bra{-1} J_x \ket{0} \\
+        &= \bra{-1} \frac{J_-}{2} \ket{0} \\ 
+        &= \bra{-1} \frac{\hbar \sqrt{(1)(1+1) - (0)(0 - 1)}}{2} \ket{-1}\\
+        &= \hbar \frac{\sqrt{2}}{2} \\
+        &= \frac{\hbar}{\sqrt{2}}
+    \end{split}
+\end{equation}
+
+Now, since the matrix is hermitian, we have the following relation between a and b:
+\begin{equation}
+\begin{split}
+    & b = a^* \\
+    \implies & b = \frac{\hbar}{\sqrt{2}}
+\end{split}
+\end{equation}
+
+We can perform the same calculation for c:
+
+\begin{equation}
+    \begin{split}
+        c &= \bra{0} J_x \ket{1} \\
+        &= \bra{0} \frac{J_-}{2} \ket{1} \\ 
+        &= \bra{0} \frac{\hbar \sqrt{(1)(1+1) - (1)(1 - 1)}}{2} \ket{1}\\
+        &= \hbar \frac{\sqrt{2}}{2} \\
+        &= \hbar \frac{1}{\sqrt{2}}
+    \end{split}
+\end{equation}
+
+Again, using the hermiticity argument, we get $d = c = \frac{\hbar}{\sqrt{2}}$. Therefore the final $J_x$ matrix is:
+
+\begin{equation}
+    \frac{\hbar}{\sqrt{2}}
+    \begin{bmatrix}
+    0 & 1 & 0 \\
+    1 & 0 & 1 \\
+    0 & 1 & 0 \\
+    \end{bmatrix}
+\end{equation}
+
+Now that we have $J_x$ (and $J_z$ is trivial), we can use the commutator relation to get $J_y$ :
+\begin{equation}
+\begin{split}
+    [J_x,J_z] &= -i \hbar J_y  
+\end{split}
+\end{equation}
+
+We write $[J_x,J_z]$ as
+
+\begin{equation}
+    \frac{\hbar^2}{\sqrt{2}}(
+    \begin{bmatrix}
+    0 & 1 & 0 \\
+    1 & 0 & 1 \\
+    0 & 1 & 0 \\
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 0 & 0 \\
+    0 & 0 & -1 \\
+    \end{bmatrix} 
+    -
+    \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 0 & 0 \\
+    0 & 0 & -1 \\
+    \end{bmatrix}
+    \begin{bmatrix}
+    0 & 1 & 0 \\
+    1 & 0 & 1 \\
+    0 & 1 & 0 \\
+    \end{bmatrix})
+\end{equation}
+
+With a little algebra we get 
+
+\begin{equation}
+    [J_x,J_z] = -i \hbar J_y  = \frac{\hbar^2}{\sqrt{2}}
+        \begin{bmatrix}
+    0 & -1 & 0 \\
+    1 & 0 & -1 \\
+    0 & 1 & 0 \\
+    \end{bmatrix}
+\end{equation}
+
+Finally we get
+
+\begin{equation}
+    J_y = 
+    \frac{i \hbar}{\sqrt{2}}
+    \begin{bmatrix}
+    0 & -1 & 0 \\
+    1 & 0 & -1 \\
+    0 & 1 & 0 \\
+    \end{bmatrix}
+\end{equation}
+
+\questionpart 
+\textbf{An unpolarized beam of spin 1 particles enters a Stern-Gerlach filter
+that passes only particles with $S_z = \hbar$. After exiting this filter, the beam 
+enters a second filter that passes particles with $S_x = \hbar$ and then finally it 
+encounters a third filter that passes only particles with $S_z = -\hbar$.  
+What fraction of the initial particles make it right through?}
+
+By computing the eigenvectors of the matrix $J_y$ we get the results
+
+\begin{equation}
+    \abs{\braket{S_x = i}{S_z = j}}^2 = \frac{1}{3}
+\end{equation}
+
+for $i$,$j$ = -1,0,1.
+
+Since the beam is unpolarised, 1/3 of the particles will pass through the first filter. Again, because of the above result, 1/3 of the particles will pass through filter 2. Similarly, 1/3 of these particles will then pass through filter 3. Finally we find that 1/27 of the particles will pass through the whole set-up. 
+
+
+
+\end{alphaparts}

@@ -1,3 +1,66 @@
-\question*{Your question here.}
+\question
 
 \sankalp{I got this one.}
+
+\begin{alphaparts}
+    
+\questionpart \textbf{Calculate the expectation values of $\Angularmomentum_x$, $\Angularmomentum_y$,
+$\Angularmomentum_x ^2$ and $\Angularmomentum_y ^2$ in the angular momentum states $\ket{j, m}$. 
+Explain the result geometrically. (Using symmetry arguments may help).}
+
+We start with the expansion of the operators $\Angularmomentum_x$ and 
+$\Angularmomentum_y$ in terms of the ladder operators
+
+\begin{equation}
+    \Angularmomentum_x = \frac{1}{2} \cdot (\Angularmomentum_+ + \Angularmomentum_-)
+    \label{eq:angx}
+\end{equation}
+
+and
+
+\begin{equation}
+    \Angularmomentum_y = \frac{1}{2\iota} \cdot (\Angularmomentum_+ - \Angularmomentum_-)~.
+    \label{eq:angy}
+\end{equation}
+
+The application of the ladder operators on a state $\ket{j, m}$ changes it to a 
+state of the form $c\cdot \ket{j, m \pm 1}$ for some $c \in \complex$. So, given 
+the orthogonality of the $\ket{j, m}$ states, we get that
+
+\begin{equation}
+    \expectationvalue{\Angularmomentum_x}{j, m} = \expectationvalue{\Angularmomentum_y}{j, m}  = 0 \qquad\forall \ket{j, m}~.
+\end{equation}
+
+Squaring \autoref{eq:angx} and \ref{eq:angy}, we get the operators $\Angularmomentum_x ^2$
+and $\Angularmomentum_y ^2$ in terms of the ladder operators. With the same argument as before,
+we see that only terms with equal powers of the two ladder operators will contribute, and using
+
+\begin{equation}
+    \Angularmomentum_{\pm}\ket{j, m} = \hbar \sqrt{(j \mp m)(j \pm m + 1)} ~~\ket{j, m \pm 1} ~, 
+\end{equation}
+
+we get 
+
+
+\begin{align}
+    \expectationvalue{\Angularmomentum_y ^2}{j, m} &= \expectationvalue{\Angularmomentum_x ^2}{j, m} \\
+    &= \expectationvalue{\frac{1}{4} \cdot (\Angularmomentum_+ ^2 + \Angularmomentum_+ \Angularmomentum_-
+            + \Angularmomentum_- \Angularmomentum_+ + \Angularmomentum_- ^2)}{j, m} \\
+    &= \expectationvalue{\frac{1}{4} \cdot (\Angularmomentum_+ \Angularmomentum_-
+            + \Angularmomentum_- \Angularmomentum_+)}{j, m} \\
+    &= \bra{j, m}~\frac{\hbar ^2}{4} \cdot \left(\sqrt{(j + m + 1)(j - m)}\sqrt{(j - m)(j + m + 1)} \right.\nonumber \\
+        &\quad\left. + \sqrt{(j - m)(j + m + 1)}\sqrt{(j + m + 1)(j - m)}~\right) \cdot \ket{j, m} \\
+    &= \frac{\hbar ^ 2}{2}(j + m + 1)(j - m)~.
+\end{align}
+
+The values for x and y are not separately calculated as a trivial calculation shows they're equal. The 
+same is easily argued using symmetry in the x-y plane. This symmetry also serves as an explanation for the
+expectation value, since there is similarly a reflection symmetry about either axis, the expectation cannot
+favor either $\pm$ x or $\pm$ y.
+
+\questionpart \textbf{Can the angular momentum $\Angularmomentum$ be oriented entirely along 
+the z( or x or y) axis?  Give reasons in either case.}
+
+No. Kill me now.
+
+\end{alphaparts}
