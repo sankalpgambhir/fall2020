@@ -2,13 +2,20 @@
 
 % actual macros
 \newcommand{\momentum}{p}
-\newcommand{\Momentum}{\hat{\textbf{P}}}
+\newcommand{\Momentum}{~\hat{\textbf{P}}}
 \newcommand{\position}{x}
-\newcommand{\Position}{\hat{\textbf{X}}}
-\newcommand{\Hamiltonian}{\hat{\textbf{H}}}
+\newcommand{\Position}{~\hat{\textbf{X}}}
+\newcommand{\Angularmomentum}{~\hat{\textbf{J}}}
+\newcommand{\Rotation}[2]{\ensuremath{U\left(R\left(#1 #2\right)\right)}}
+\newcommand{\Hamiltonian}{~\hat{\textbf{H}}}
 \newcommand{\statephi}{\phi}
 \newcommand{\statepsi}{\psi}
-\newcommand{\Identity}{\hat{\textbf{1}}}
+\newcommand{\Identity}{~\hat{\textbf{1}}}
+\newcommand{\normalvector}{\hat{\textbf{n}}}
+\newcommand{\paulivector}{\boldsymbol{\sigma}}
+
+%% convenience
+\allowdisplaybreaks % allow breaking equations and aligns across pages
 
 % homework class and document settings
 \renewcommand{\hwauthorlist}{   Parth Sastry    \\ \texttt{180260026} \and
