@@ -38,8 +38,6 @@ collection of thought, only to live in a brittle bubble of obtuse opinion.
 
 ## Metaphysics
 
-### Jai
-
 ---
 
 - Fire, the fundamental substance
@@ -50,6 +48,10 @@ collection of thought, only to live in a brittle bubble of obtuse opinion.
 - Flux <- as an example of contradictions
 
 ## Epistemiology
+Heraclitus values subjective truths brought out by one's own experiences over the hearsay and teachings that have been handend down by others, claiming that he would rather trust his eyes than ears. [Fragment55,101a,107,19]. The emphasis on subjective experience and inquiry is further stenghtend in fragment 28 "I went in search of myself". He claims that true wisdom is mysterious, both hard to grasp but easy and self evident at the same time. The most important contribution of Hercalitus here is his claim that human order and human value arises as a consequence of some cosmic order and justice[Fragment30]. This leads us into the main idea of his epistemology, the unity of paradoxes. While there was significant debate in greek society about the nature of value and 'aerte' He argues that the only wisdom is one which is aligned with the cosmic justice and social order [Fragement30]. This is exemplified also by his dual use of the word 'logos' both to represent human order and logic and the cosmic order. Thus Heraclitus implores us to deeply reflect upon our lives and expereiences to try and obtain true wisdom. 
+
+
+
 
 ### Pushkar
 
