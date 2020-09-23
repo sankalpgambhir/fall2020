@@ -31,11 +31,6 @@ for people to seek their own understanding of the timeless truth, the
 *logos*, instead paints futile following of troubadours trotting in careless
 collection of thought, only to live in a brittle bubble of obtuse opinion.
 
-
-- Humanist ideas
-  - Arguing about philosophy as some certain truth, obtainable only as experiences of humans.
-- Unity of contradictions
-
 ## Metaphysics
 
 ### Sankalp
@@ -56,13 +51,6 @@ things existing in many forms and context, instances of the universal
 fire, such as sea water fit for fish but not men, wherein things
 may be seen as changing in time, rather than in context. 
 
-- Fire, the fundamental substance
-  - Philosophers criticize that he chose the most transient element.
-  - Alternate thought: 
-    > Fire as the fundamental object represents change.\
-    > Change is the only unchanging object in the world.
-- Flux <- as an example of contradictions
-
 ## Epistemiology
 
 ### Pushkar
@@ -70,12 +58,3 @@ may be seen as changing in time, rather than in context.
 ---
 
 Heraclitus values subjective truths brought out by one's own experiences over the hearsay and teachings that have been handend down by others, claiming that he would rather trust his eyes than ears. [Fragment55,101a,107,19]. The emphasis on subjective experience and inquiry is further stenghtend in fragment 28 "I went in search of myself". He claims that true wisdom is mysterious, both hard to grasp but easy and self evident at the same time. The most important contribution of Hercalitus here is his claim that human order and human value arises as a consequence of some cosmic order and justice[Fragment30]. This leads us into the main idea of his epistemology, the unity of paradoxes. While there was significant debate in greek society about the nature of value and 'aerte' He argues that the only wisdom is one which is aligned with the cosmic justice and social order [Fragement30]. This is exemplified also by his dual use of the word 'logos' both to represent human order and logic and the cosmic order. This idea of unifying contradictions [Fragment10] is also seen through multiple examples, like his claim that night and day are but the same, that Saltwater is poisonous to us but integral for fish, that war is Justice for that is the only way peace has value [Fragment82] claiming that they too are not different but the  Thus Heraclitus implores us to deeply reflect upon our lives and expereiences to try and obtain true wisdom beyond apparent contradictions 
-
-
-
-
-- Knowledge by perception
-- Experience the truth - ***logos***
-- Do not rely on hearsay
-- Introspect on your own experience
-- Poetry of the Greeks is just opinion people mistake for the truth
