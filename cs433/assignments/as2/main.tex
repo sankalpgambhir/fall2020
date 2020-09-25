@@ -1,0 +1,87 @@
+\newcounter{draft}
+\setcounter{draft}{0}
+
+\input{../../../common/common}
+\usepackage{csvsimple}
+
+% homework class and document settings
+\renewcommand{\hwauthorlist}{   Parth Sastry    \\ \texttt{180260026} \and
+                                Sankalp Gambhir \\ \texttt{180260032}
+} % author list for first page only, slightly jank
+\renewcommand{\hwname}{Parth Sastry, Sankalp Gambhir}
+\renewcommand{\hwemail}{\texttt{180260026, 32}}
+\renewcommand{\hwclass}{CS433}
+\renewcommand{\hwtype}{Assignment}
+\renewcommand{\hwnum}{2}
+
+\begin{document}
+    \maketitle
+
+    \begin{figure}[!hp]
+
+        \centering
+        \scalebox{1.5}{
+        
+    \begin{tikzpicture}
+        \pgfplotsset{
+            scale only axis,
+            compat=1.3,
+        }
+        
+        \begin{axis}[
+            xlabel = Time,
+            ylabel = Problems,
+            xmode = log,
+            ymode = log,
+            typeset ticklabels with strut,
+            legend style={at={(0.5,-0.3)},anchor=north}
+        ]
+    
+        \addplot table [col sep=comma] {data/out.txt.csv};
+        \addplot table [col sep=comma] {data/out600.txt.csv};
+        \addplot table [col sep=comma] {data/out700.txt.csv};
+        \addplot table [col sep=comma] {data/out800.txt.csv};
+        \addplot table [col sep=comma] {data/out900.txt.csv};
+        \addplot table [col sep=comma] {data/out1000.txt.csv};
+        \addplot table [col sep=comma] {data/out1000n.txt.csv};
+        \addplot table [col sep=comma] {data/out500n.txt.csv};
+        \label{axis:prediction}
+        
+        % plot 1 legend entry
+        \addlegendimage{/pgfplots/refstyle=axis:prediction}
+        \addlegendentry{Scorefactor 500}   
+        \addlegendentry{Scorefactor 600}   
+        \addlegendentry{Scorefactor 700}   
+        \addlegendentry{Scorefactor 800}   
+        \addlegendentry{Scorefactor 900}   
+        \addlegendentry{Scorefactor 1000}   
+        \addlegendentry{Scorefactor 1000, Score false}   
+        \addlegendentry{Scorefactor 500, Score false}   
+         
+        \end{axis}
+    
+    \end{tikzpicture}}
+    \caption{Time taken versus problems solved}
+    \label{fig:time}
+\end{figure}
+
+    As we see in \autoref{fig:time}, the runs with \texttt{score = false} come out on top at the start, but begin
+    to dwindle with more complex problems. This suggests that the score calculations add 
+    unnecessary complexity to smaller problems and removing it adds to the performance, while
+    in large problems with more conflicts it would help settle in on a result quicker.
+
+    We are not particularly sure about the \texttt{scorefactor} parameter based results. We got 
+    different results for the times while changing \texttt{scorefactor} even though we had
+    asked to not use EVSIDS scores, consistently across tests we performed. The lower \texttt{scorefactor}
+    performed better here. Based on these and the paper on techniques used here by \href{http://fmv.jku.at/papers/BiereFroehlich-SAT15.pdf}{Biere et al},
+    creators of CaDiCaL that this infact corresponds to the damping factor \emph{f} used in the paper.
+    
+    Across several runs to verify our results, we did not observe much change in time compared to these
+    results. Here, we see that the reds, 600 and 1000 both perform about the same, with the blues 500 and 900 being a 
+    bit better, and black/browns 700 and 800 performing better than the rest. While our data is limited by
+    the scope of available computing power, this does suggest that values of \texttt{scorefactor} on either 
+    ends of the spectrum (allowed values 500 to 1000 per \href{https://www.mankier.com/1/cadical}{documentation})
+    seem to degrade performance, perhaps by causing too much decay and flattening the scores, or causing too little,
+    and letting scores build up.
+
+\end{document}
