@@ -8,7 +8,7 @@ class decision_tree:
         assert (r == None) or (isinstance(r, decision_tree)), "Invalid data type passed for r!"
         assert (isinstance(size, int)) and (size > 0), "Invalid decision size!" 
 
-        self.left = l;
-        self.right = r;
+        self.left = l
+        self.right = r
 
         pass
