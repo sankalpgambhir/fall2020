@@ -13,14 +13,14 @@ int grePin[2] = {7, 8}; // use playerPin(x) macro instead for compile time resol
 
 
 // variables
-#define maxWait 500
+#define maxWait 1500
 uint8_t state = 0; // start state
 uint8_t ball[2] = {0, 1}; // position 0, moving right
 uint8_t ballInRange = 0; // 0 = none, 1 = left, 2 = right
 volatile bool leftHit = false, rightHit = false;
 bool lightOn = 0;
 uint16_t lightOnStart = 0;
-unsigned long ballWait = 0; // time ball has been near player
+unsigned long ballWaitStart = 0; // time ball has been near player
 uint16_t timeLeftHit = 0, timeRightHit = 0;
 uint8_t victory = 0; // has a player won? if yes, which?
 
@@ -37,13 +37,15 @@ void setup(){
     PORTB = 0x0;
 
     changeOutputs(); // initial lights
-    pinMode(leftPlayer, INPUT_PULLUP);
+    pinMode(leftPlayer, INPUT);
     attachInterrupt(digitalPinToInterrupt(leftPlayer), leftPlayerHit, FALLING);
-    pinMode(rightPlayer, INPUT_PULLUP);
+    pinMode(rightPlayer, INPUT);
     attachInterrupt(digitalPinToInterrupt(rightPlayer), rightPlayerHit, FALLING);
 }
 
 void loop(){
+
+    Serial.println(state);
 
     if(lightOn){
       if((millis() - lightOnStart) >= maxWait){
@@ -69,18 +71,18 @@ void loop(){
       }
     }
 
-    // delay(100); // delay to control clock speed
 
     switch (state)
     {
     case 0:
       // initial state
       // wait for first input
-      if(leftHit) {state = 1; leftHit = 0;}
+      if(leftHit) {state = 1; leftHit = 0; ball[0] += ball[1];}
       break;
 
     case 1:
       // game in play
+      delay(300); // delay to control clock speed
       if(ball[0] != 0 && ball[0] != 3){
         // somewhere in the middle
         ball[0] += ball[1]; // x = x + v.dt
@@ -89,14 +91,15 @@ void loop(){
       }
       else{
         ballInRange = (ball[0] == 0) ? 1 : -1;
+        state = (ball[0] == 0) ? 2 : 3;
         // start counter
-        ballWait = millis();
+        ballWaitStart = millis();
       }
     
     case 2:
       // ball in left range
-      if(ballWait >= maxWait){
-        victory = rightPlayer;
+      if((millis() - ballWaitStart) >= maxWait){
+        victory = playerPin(rightPlayer);
         state = 4;
         break;
       }
@@ -111,8 +114,8 @@ void loop(){
     
     case 3:
       // ball in right range
-      if(ballWait >= maxWait){
-        victory = rightPlayer;
+      if((millis() - ballWaitStart) >= maxWait){
+        victory = playerPin(leftPlayer);
         state = 4;
         break;
       }
@@ -130,13 +133,14 @@ void loop(){
       // flash 4 times;
       for(int i = 1; i <= 8; i++){
         digitalWrite(victory, i%2);
-        delay(500);
+        delay(250);
       }
       // go back to initial
       ball[0] = 0;
       ball[1] = 1;
       ballInRange = 0;
       state = 0;
+      changeOutputs();
       break;
     
     default:
@@ -150,22 +154,14 @@ void loop(){
 }
 
 void leftPlayerHit(){
-
-  if(ballInRange = 1){
-    leftHit = true;
-    timeLeftHit = 0;
-  }
-
+  leftHit = true;
+  timeLeftHit = 0;
   return;
 }
 
 void rightPlayerHit(){
-
-  if(ballInRange == -1){
-    rightHit = true;
-    timeRightHit = 0;
-  }
-
+  rightHit = true;
+  timeRightHit = 0;
   return;
 }
 
