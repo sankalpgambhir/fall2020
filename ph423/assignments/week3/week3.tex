@@ -1,6 +1,6 @@
 % is draft? display comments and notes?
 \newcounter{draft}
-\setcounter{draft}{0}
+\setcounter{draft}{1}
 
 % input general format
 \input{../macro}
@@ -12,10 +12,13 @@
 \begin{document}
     \maketitle
 
+    \setcounter{questionCounter}{1}
     \input{q2}
 
+    \setcounter{questionCounter}{6}
     \input{q7}
 
+    \setcounter{questionCounter}{7} % not needed but eh uniformity
     \input{q8}
 
 \end{document}

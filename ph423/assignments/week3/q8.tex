@@ -1,2 +1,109 @@
 \question
 \sankalp{I got this one.}
+
+\begin{alphaparts}
+
+\questionpart
+Writing matrices for the Hamiltonians $\Hamiltonian_0$ and $\Hamiltonian'$ with
+$\statepsi_a$ and $\statepsi_b$ as basis
+
+\begin{align}
+    \Hamiltonian_0 &= \begin{pmatrix}
+        E_a & 0 \\ 
+        0   & E_b
+    \end{pmatrix}, \\
+    \Hamiltonian' &= \begin{pmatrix}
+        E_a & h \\ 
+        h   & E_b
+    \end{pmatrix}~, \textnormal{and} \\
+    \Hamiltonian &= \Hamiltonian_0 + \Hamiltonian' \nonumber \\
+                 &= \begin{pmatrix}
+                    2E_a & h \\ 
+                    h   & 2E_b
+                 \end{pmatrix}~.
+\end{align}
+
+The eigenvalues for this combined Hamiltonian are easily calculated by
+considering the eigenvalue equation and taking a determinant to get
+$\determinant(E \cdot \Identity - \Hamiltonian) = 0.$ The eigenvalues $E$ which
+solve this equation are thus given by 
+
+\begin{align}
+    (E - 2E_a) \cdot (E - 2E_b) - h^2 = 0 \\
+    E = (E_a + E_b) \pm \sqrt{(E_a + E_b)^2 + h^2}  
+\end{align}
+
+We can also obtain the eigenvectors $(c_1, c_2)$ from the same equation,
+obtaining easily the relation
+
+\begin{equation}
+    \frac{c_1}{c_2} = \frac{(E_b - E_a) \pm \sqrt{(E_b - E_a)^2 + h^2} }{h}
+\end{equation}
+
+We note that the two summands on the right side can be split using the familiar
+trigonometric identity between the tangent and secant to get
+
+\begin{equation}
+    \frac{c_1}{c_2} = \tan \alpha \pm \sec \alpha
+\end{equation}
+
+\questionpart
+To obtain an estimate of the ground state energy, we assume the trial
+wavefunction of the form $\statepsi = \cos{\theta} \cdot \statephi_a +
+\sin{theta} \cdot \statephi_b$. Notably, the state is assumed to be normalized.
+Hence, the energy eigenvalues are obtained simply by calculating the expectation
+value of the Hamiltonian $\Hamiltonian$ and minimizing it with respect to the
+parameter $\theta$
+
+\begin{align}
+    \expectationvalue{\Hamiltonian}{\statepsi}  &=
+    \begin{pmatrix}
+        \cos{\theta} & \sin{\theta}
+    \end{pmatrix}
+    \begin{pmatrix}
+        2E_a & h \\ 
+        h   & 2E_b
+    \end{pmatrix} \begin{pmatrix}
+        \cos{\theta} \\ \sin{\theta}
+    \end{pmatrix} \\
+    &= 2E_a \cos^2{\theta} + 2E_b \sin^2{\theta} + 2h \cos{\theta}\sin{\theta}
+\end{align}
+
+and minimizing
+
+\begin{align}
+    \dv{\theta} \expectationvalue{\Hamiltonian}{\statepsi}  &= 0 \nonumber \\
+    \dv{\theta} (2E_a \cos^2{\theta} + 2E_b \sin^2{\theta} + 2h \cos{\theta}\sin{\theta})  &= 0 \nonumber \\
+    -4E_a \cos{\theta}\sin{\theta} + 4E_b \sin{\theta}\cos{\theta} 
+    + 2h \cos^2{\theta} - 2h \sin^2{\theta}  &= 0~.
+\end{align}
+
+Observing that this can be converted to an equation in $\cos {2\theta}$ and
+$\sin 2\theta$, and finally dividing by $\cos {2\theta}$ we get an equation
+solely in the tangent
+
+\begin{equation}
+    \tan 2\theta = \frac{h}{E_a - E_b}
+\end{equation}
+
+Recognizing this as the tangent substitution we performed in part a, we get 
+
+\begin{equation}
+    \tan 2\theta = - \cot \alpha~.
+\end{equation}
+
+Using the tangent double-angle formula and solving the resultant quadratic
+equation, we obtain the ratio
+
+\begin{equation}
+    \tan \theta = \frac{\sin \theta}{\cos \theta} = \tan \alpha \pm \sec \alpha
+\end{equation}
+
+which are precisely the eigenvectors we got in part a! So the expectation values
+corresponding to these are given by the eigenvalues themselves.
+
+The variational principle is accurate in this case because the trial
+wavefunction spans the entire state space, so minimizing over it, we guarantee a
+global minima.
+
+\end{alphaparts}
