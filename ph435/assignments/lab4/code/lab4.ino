@@ -32,7 +32,7 @@ void changeOutputs();
 void setup(){
     Serial.begin(1000000); // why not
     DDRD |= 0b11111110; // pins 1-7 as output. 0 is Tx
-    DDRB |= 0x11111111; // set all pins 8-13 (and dummy bits) to output
+    DDRB |= 0b11111111; // set all pins 8-13 (and dummy bits) to output
     PORTD = 0x0;  // initialise as low 
     PORTB = 0x0;
 
