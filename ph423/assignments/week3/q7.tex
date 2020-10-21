@@ -1,2 +1,87 @@
 \question
 \sahas{I got this one}
+
+The expectation value of the hamiltonian using this trial wavefunction may be written as:
+
+\begin{equation}
+    \frac{\bra{\psi_\alpha} H \ket{\psi_\alpha}}{\braket{\psi_\alpha}{\psi_\alpha}}
+\end{equation}
+
+In the position basis, this expression becomes:
+
+\begin{equation}
+\frac{
+    \int_{-\infty}^{\infty} \frac{1}{x^2 + \alpha^2} (-\frac{\hbar^2}{2m} \frac{\partial^2 }{\partial x^2} + \frac{K x^2}{2}) \frac{1}{x^2 + \alpha^2} dx
+}
+{\int_{-\infty}^{\infty}  \frac{1}{(x^2 + \alpha^2)^2} dx} 
+\end{equation}
+
+Simplifying, we get the following integral for the Kinetic part of the numerator:
+
+\begin{equation}
+   \langle T \rangle = -\frac{\hbar^2}{2m}  \int_{-\infty}^{+\infty} \frac{1}{x^2 + \alpha^2} \frac{\partial^2 }{\partial x^2}  \frac{1}{x^2 + \alpha^2} dx
+\end{equation}
+
+Integrating by parts and using the fact that $\frac{1}{(x^2 + \alpha^2)^2}$ falls to zero faster than $x$ at $\pm \infty$ we get:
+
+\begin{equation}
+\begin{split}
+   \langle T \rangle &= \frac{\hbar^2}{2m}  \int_{-\infty}^{+\infty}  (\frac{\partial }{\partial x}  \frac{1}{x^2 + \alpha^2})^2 dx \\
+   &=  \frac{\hbar^2}{2m}  \int_{-\infty}^{+\infty}   \frac{4x^2}{(x^2 + \alpha^2)^4} dx
+\end{split}
+\end{equation}
+
+Using the substitution $x = \alpha \tan \theta$ we get
+
+\begin{equation}
+     \langle T \rangle = \frac{2 \hbar^2}{m \alpha^5}  \int_{-\pi/2}^{+\pi/2} \cos^4 \theta \sin^2 \theta d \theta
+\end{equation}
+
+This can be written in terms of the beta function:
+
+\begin{equation}
+ \langle T \rangle = \frac{2 \hbar^2}{m \alpha^5} B(3/2 , 5/2) = \frac{\pi \hbar^2}{8 m \alpha^5}
+\end{equation}
+
+Now we calculate the potential energy term in the numerator:
+
+\begin{equation}
+    \langle V \rangle = \int_{-\infty}^{\infty}   \frac{K x^2}{2} \frac{1}{(x^2 + \alpha^2)^2} dx 
+\end{equation}
+
+We use the same substitution as above to get:
+
+\begin{equation}
+     \langle V \rangle = \frac{K}{2 \alpha}  \int_{-\pi/2}^{+\pi/2} \sin^2 \theta d \theta = \frac{K \pi}{4 \alpha} 
+\end{equation}
+
+The denominator is the following integral:
+
+\begin{equation}
+\int_{-\infty}^{\infty}  \frac{1}{(x^2 + \alpha^2)^2} dx
+\end{equation}
+
+Again using the same $x = \alpha \tan \theta$ substitution: 
+
+\begin{equation}
+\int_{-\pi/2}^{+\pi/2}  \frac{1}{\alpha^3} \cos^2 \theta d \theta= \frac{\pi}{2 \alpha^3} 
+\end{equation}
+ 
+ Finally, we get for the expectation value of H:
+ 
+ \begin{equation}
+     \expectationvalue{H} = \frac{\hbar^2}{4 \alpha^2 m} + \frac{k \alpha^2}{2}
+ \end{equation}
+ 
+ We use the AM-GM inequality to find a lower bound for $\expectationvalue{H}$:
+ 
+ \begin{equation}
+     \expectationvalue{H}_{min} = \hbar \sqrt{\frac{k}{2m}}
+ \end{equation}
+ 
+ The value of $\alpha$ that gives us this minumum value will be the one for which both terms are equal:
+ 
+ \begin{equation}
+     \alpha_0 = \sqrt[4]{\frac{\hbar^2}{2 k m}}
+ \end{equation}
+ 
