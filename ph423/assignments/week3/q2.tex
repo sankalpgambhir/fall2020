@@ -1,15 +1,17 @@
   \parth{doing question 2. Someone go through afterwards}
 
-    \question*{Calculate the variational bound on the ground state energy of the Hydrogen atom using the trial wavefunction
-    \begin{equation*}
-        \psi_{\alpha}(r) = 
-        \begin{cases}
-            \left( 1 - \frac{r}{\alpha}\right) & r \leqslant \alpha, \\
-            0 & r \geqslant \alpha 
-        \end{cases}
-    \end{equation*}
-    How is $\alpha_{min}$ related to the Bohr radius?
-    }
+    %\question*{Calculate the variational bound on the ground state energy of the
+    %Hydrogen atom using the trial wavefunction
+    %\begin{equation*}
+    %    \psi_{\alpha}(r) = 
+    %    \begin{cases}
+    %        \left( 1 - \frac{r}{\alpha}\right) & r \leqslant \alpha, \\
+    %        0 & r \geqslant \alpha 
+    %    \end{cases}
+    %\end{equation*}
+    %How is $\alpha_{min}$ related to the Bohr radius?}
+
+    \question
 
     The Hamiltonian for an electron in the Hydrogen atom is 
 
@@ -24,29 +26,36 @@
         \hat H = -\frac{\hbar^2}{2\mu}\nabla^2 + P(\vec r) = -\frac{\hbar^2}{2\mu}\nabla^2 - \frac{Ze^2}{4\pi\varepsilon_0 r}
     \end{equation*}
 
-    and then expressing the Laplacian in spherical coordinates and setting Z = 1. Here $\mu$ is the reduced mass of the system.
+    and then expressing the Laplacian in spherical coordinates and setting Z =
+    1. Here $\mu$ is the reduced mass of the system.
     
-    The only undetermined parameter in our trial wavefunction is $\alpha$. We'll have to minimize the expectation value of the Hamiltonian of an electron in a Hydrogen atom (\ref{eqn:hydrogenhamiltonian}) with respect to this undetermined parameter by solving 
+    The only undetermined parameter in our trial wavefunction is $\alpha$. We'll
+    have to minimize the expectation value of the Hamiltonian of an electron in
+    a Hydrogen atom (\ref{eqn:hydrogenhamiltonian}) with respect to this
+    undetermined parameter by solving 
 
     \begin{equation}
         \label{eqn:variational}
         \frac{d\langle H \rangle(\alpha)}{d\alpha} = 0
     \end{equation}
 
-    So the first thing to do is to solve for $\langle H \rangle$, and then minimize this value with respect to $\alpha$
+    So the first thing to do is to solve for $\langle H \rangle$, and then
+    minimize this value with respect to $\alpha$
 
     \begin{equation*}
         \langle H \rangle = \frac{\bra{\psi}H\ket{\psi}}{\braket{\psi}{\psi}}
     \end{equation*}
 
-    in wave function formalism, this takes the form of an integral over all space.
+    in wave function formalism, this takes the form of an integral over all
+    space.
 
     \begin{equation}
         \label{eqn:expectationvalue}
         \langle H \rangle = \frac{\iiint_{all space} (r^{2}sin(\theta))\psi^{*}(r,\theta,\phi)\hat{H}\psi(r,\theta,\phi) \,dr\,d\theta\,d\phi}{\iiint_{all space} (r^{2}sin(\theta))\psi^{*}(r,\theta,\phi)\psi(r,\theta,\phi) \,dr\,d\theta\,d\phi}
     \end{equation}
 
-    Our trial wave function, as given in the question, is real-valued, and spherically symmetric. \\
+    Our trial wave function, as given in the question, is real-valued, and
+    spherically symmetric. \\
     We first calculate the norm of the wave function. Our trial wave function is
     \begin{equation*}
         \psi_{\alpha}(r) = 
@@ -66,13 +75,15 @@
     \end{split}
     \end{equation*}
     
-    Due to the symmetries in the system, the numerator in \ref{eqn:expectationvalue} takes the form
+    Due to the symmetries in the system, the numerator in
+    \ref{eqn:expectationvalue} takes the form
 
     \begin{equation*}
         \bra{\psi}H\ket{\psi} = 4\pi \int_{0}^{\infty} r^{2} \psi(r)\hat{H}\psi(r)\,dr
     \end{equation*}
 
-    We need to find out what the action on the Hamiltonian operator on our trial wavefunction is.
+    We need to find out what the action on the Hamiltonian operator on our trial
+    wavefunction is.
 
     \begin{equation*}
     \begin{split}
@@ -83,7 +94,9 @@
     \end{split}
     \end{equation*}
 
-    The above derivation for $\hat{H}\psi(r)$ is for $r \leqslant \alpha$. For $r \geqslant \alpha$, our wavefunction is zero, and this $\hat{H}\psi(r)$ also evaluates to zero.\\
+    The above derivation for $\hat{H}\psi(r)$ is for $r \leqslant \alpha$. For
+    $r \geqslant \alpha$, our wavefunction is zero, and this $\hat{H}\psi(r)$
+    also evaluates to zero.\\
     Thus, for $\bra{\psi}H\ket{\psi}$, we have
 
     \begin{equation*}
@@ -132,7 +145,8 @@
     \end{split}
     \end{equation*}
 
-    This value of $\alpha_{min}$ that we obtained is 4 times the reduced Bohr radius.
+    This value of $\alpha_{min}$ that we obtained is 4 times the reduced Bohr
+    radius.
 
     \begin{equation*}
     \begin{split}
