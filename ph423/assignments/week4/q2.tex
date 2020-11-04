@@ -1,1 +1,164 @@
 \question
+\sankalp{Got it}
+
+\begin{alphaparts}
+
+\questionpart
+The given Hamiltonian $H(\epsilon)$ is
+
+\begin{equation}
+    H(\epsilon) = V_0 \cdot 
+    \begin{pmatrix}
+        (1-\epsilon)    & 0         & 0         \\
+        0               & 1         & \epsilon  \\
+        0               & \epsilon  & 2         
+    \end{pmatrix}
+\end{equation}
+
+and the unperturbed Hamiltonian $H_0$
+
+
+\begin{equation}
+    H_0 = H(0) = V_0 \cdot 
+    \begin{pmatrix}
+        1               & 0         & 0         \\
+        0               & 1         & 0         \\
+        0               & 0         & 2         
+    \end{pmatrix}
+\end{equation}
+
+is diagonal, so the eigenvectors of the unperturbed system are simply $(1, 0,
+0), (0, 1, 0), $ and $(0, 0, 1)$ with eigenvalues $V_0, V_0,$ and $2V_0$
+respectively. 
+
+The perturbation $H'$ is thus
+
+\begin{equation}
+    H' = H(\epsilon) - H_0 = V_0 \cdot 
+    \begin{pmatrix}
+        -\epsilon       & 0         & 0         \\
+        0               & 0         & \epsilon  \\
+        0               & \epsilon  & 0         
+    \end{pmatrix}
+\end{equation}
+
+Eigenvalues of the whole system are given by the equation in $\epsilon$ and
+$lambda$, the eigenvalues themselves,
+
+\begin{align}
+    \abs{(H(\epsilon) - \lambda \Identity)} = 0~, \textnormal{or},\\ 
+    \begin{vmatrix}
+        (V_0(1-\epsilon)-\lambda) & 0         & 0         \\
+        0                   & V_0-\lambda & V_0\epsilon  \\
+        0                   & V_0\epsilon  & 2V_0-\lambda                 
+    \end{vmatrix} = 0 \\
+    ((1-\epsilon)V_0-\lambda)((V_0-\lambda)(2V_0-\lambda) - V_0^2\epsilon^2) = 0
+\end{align}
+
+This gives $\lambda = (1-\epsilon)V_0, \frac{V_0}{2} (3-\sqrt{4\epsilon^2 +1}),
+\frac{V_0}{2} (3+\sqrt{4\epsilon^2 +1})$ as the eigenvalues of H. Call these
+$\lambda_{1, 2, 3}$ respectively.
+
+\begin{comment}
+
+// don't need eigenvectors smh
+
+Eigenvectors for each of the eigenvalues must be calculated. For the first it is
+simply $(1, 0, 0)$, same as before, since in this subspace of the state space,
+the perturbation creates no off-diagonal elements. So we may reduce to the
+$2\times 2$ minor matrix $H_m$ corresponding to the first matrix element and
+calculate it's 2D eigenvectors, then take a direct product with the 0-vector in
+the first dimension. The eigenvectors $v_i$ for eigenvalues $\lambda_i$ for $i
+\in \{2, 3\}$ are given by
+
+\begin{equation}
+    H_m v_i = \lambda_i v_i
+\end{equation}
+
+This gives $v_2 = (1, \frac{\epsilon}{\lambda_2 - 1})$ and  $v_3 =
+(\frac{\lambda_3 - 2}{\epsilon}, 1)$ (scaled, conveniently chosen for each of
+the eigenvalues). Substituting the eigenvalues, we get
+
+\begin{align}
+    v_2 = (1, \frac{2\epsilon}{1-\sqrt{4\epsilon^2 +1}}) \\
+    v_3 = (\frac{-1+\sqrt{4\epsilon^2 +1}}{2\epsilon}, 1)     
+\end{align}
+
+Approximating the square roots assuming $\epsilon$ is small, 
+
+\end{comment}
+
+Evaluating to second order in $\epsilon$, we get 
+
+\begin{equation}
+    (\lambda_1, \lambda_2, \lambda_3) = V_0 (1-\epsilon, 1-\epsilon^2, 2+\epsilon^2)
+\end{equation}
+
+\questionpart
+The last eigenvalue, $2V_0$, is non degenerate, so we attempt to approximate its
+perturbed analogue using non-degenerate perturbation theory as required, using
+both first and second order theories.
+
+The first order correction is given simply by
+
+\begin{align}
+    \expectationvalue{H'}{v_3} &= \begin{pmatrix}
+        0 & 0 & 1
+    \end{pmatrix}\begin{pmatrix}
+        -\epsilon       & 0         & 0         \\
+        0               & 0         & \epsilon  \\
+        0               & \epsilon  & 0           
+    \end{pmatrix}\begin{pmatrix}
+        0 \\ 0 \\ 1
+    \end{pmatrix}\nonumber\\
+    &= \begin{pmatrix}
+        0 & 0 & 1
+    \end{pmatrix}\begin{pmatrix}
+        0 \\ \epsilon \\ 0
+    \end{pmatrix}\nonumber\\
+    &= 0~.
+\end{align}
+
+That is, there is no first-order correction to the eigenvalue, which is
+expected, given the calculation from part a.
+
+Moving on, representing the $n^th$ order correction to the $i^th$ eigenket as
+$\ket{v_{i, n}}$, the second-order correction is
+
+\begin{align}
+    \bra{v_{3, 0}} H' \ket{v_{3, 1}} = \bra{v_{3, 0}} H' \sum_{m\not = 3} \frac{\bra{v_{m, 0}} H' \ket*{v_{3, 1}}}{E_3^{(0)}-E_m^{(0)}} \ket{v_{m, 0}}
+\end{align}
+
+Since our eigenvectors are basis vectors, this basically filters components.
+Since we know $H'\ket{v_{3, 1}}$, the calculation trivially reduces to
+
+\begin{align}
+    \bra{v_{3, 0}} H' \ket{v_{3, 1}} &= \begin{pmatrix}
+        0 & 0 & 1
+    \end{pmatrix}\begin{pmatrix}
+        -\epsilon       & 0         & 0         \\
+        0               & 0         & \epsilon  \\
+        0               & \epsilon  & 0           
+    \end{pmatrix}\begin{pmatrix}
+        0 \\ \epsilon \\ 0
+    \end{pmatrix}\nonumber\\
+    &= \begin{pmatrix}
+        0 & 0 & 1
+    \end{pmatrix}\begin{pmatrix}
+        0 \\ 0 \\ \epsilon^2
+    \end{pmatrix}\nonumber\\
+    &= \epsilon^2
+\end{align}
+
+Thus the second order correction is $\epsilon^2$, exactly matching the result
+from part a.
+
+\questionpart
+As for the degenerate levels, corresponding to $\ket{v_{1, 0}}$ and $\ket{v_{2,
+0}}$, we apply the degenerate thoery. That is, the secular equation, as follows
+
+\begin{equation}
+    \sum_{i=1}^2 a_i (\bra{v_{j, 0}} H' \ket{v_{i, 0}} - E_i^{(0)} \delta_{ij}) = 0 \textnormal{ for } j \in \{1, 2\}
+\end{equation}
+
+\end{alphaparts}
