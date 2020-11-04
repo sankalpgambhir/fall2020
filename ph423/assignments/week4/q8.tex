@@ -1,1 +1,47 @@
 \question
+
+Solving the system exactly, we recognize that the new states must be withing the
+linear span of the $\ket{l, m}$ states. We then write the effect of the
+Hamiltonian on an arbitrary such state to obtain the eigenvalue condition.
+
+\begin{align}
+    H \sum_{l, m}a_{l, m}\ket{l, m} &= (A \LAngularmomentum^2 + B\LAngularmomentum_z + C\LAngularmomentum_y) \sum_{l, m}a_{l, m}\ket{l, m}
+\end{align}
+
+Define $c_{+, l,m}$ and $c_{-, l,m}$ as $\LAngularmomentum_+ \ket{l, m} = \hbar c_{+,
+l,m} \ket{l, m}$ and similarly for the negative. We write $\LAngularmomentum_y =
+\frac{\LAngularmomentum_+ - \LAngularmomentum_-}{2i}$ and absorb the $2i$ into
+$C$ as $D = \frac{C}{2i}$ to get
+
+\begin{align}
+    H \sum_{l, m}\ket{l, m} &= 
+    (A \LAngularmomentum^2 + B\LAngularmomentum_z + 
+    D\LAngularmomentum_+ - D\LAngularmomentum_-) \sum_{l, m}a_{l, m}\ket{l, m}\nonumber\\
+    &= \hbar \sum_{l, m}a_{l, m}((\hbar A l(l+1) + Bm)\ket{l, m} + Dc_{+, l,m}\ket{l, m+1} - Dc_{-, l,m}\ket{l, m-1}) \nonumber\\
+    &= \hbar \sum_{l, m}(a_{l, m}(\hbar A l(l+1) + Bm) + Da_{l, m-1}c_{+, l,m-1} - Da_{l, m+1}c_{-, l,m+1})\ket{l, m} \\
+\end{align}
+
+This gives us a form for the matrix representation of $H$, which has diagonal
+terms, and terms one above and one below the diagonal. The eigenvalues of this
+matrix can be obtained (painfully) via brute force calculation.
+
+We use $l = 1$ for this case to construct the matrix representation of $H$
+
+\begin{align}
+    H = \hbar \begin{pmatrix}
+        2\hbar A - B    & Dc_{-, 1,0}       & 0             \\   
+        Dc_{+, 1,-1}    & 2\hbar A          & Dc_{+, 1,1}   \\   
+        0               & Dc_{+, 1,0}       & 2\hbar A + B    
+    \end{pmatrix}~.
+\end{align}
+
+All the $c_{\pm, l,m}$ equal $\sqrt{2}$ when appearing in the matrix (zero
+elements are outside $3\times 3$). And replacing back $D = \frac{C}{2i}$ we get
+
+\begin{align}
+    H = \hbar \begin{pmatrix}
+        2\hbar A - B        & \frac{C}{\sqrt{2}i}       & 0                     \\   
+        \frac{C}{\sqrt{2}i} & 2\hbar A                  & \frac{C}{\sqrt{2}i}   \\   
+        0                   & \frac{C}{\sqrt{2}i}       & 2\hbar A + B    
+    \end{pmatrix}~.
+\end{align}
