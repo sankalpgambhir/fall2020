@@ -46,8 +46,6 @@
         \ket{1,1}^{'} = \ket{1,1} - \frac{C}{\sqrt{2}Bi}\ket{1,0} 
     \end{gather*}
 
-
-
 Solving the system exactly, we recognize that the new states must be withing the
 linear span of the $\ket{l, m}$ states. We then write the effect of the
 Hamiltonian on an arbitrary such state to obtain the eigenvalue condition.
@@ -77,8 +75,8 @@ We use $l = 1$ for this case to construct the matrix representation of $H$
 
 \begin{align}
     H = \hbar \begin{pmatrix}
-        2\hbar A - B    & Dc_{-, 1,0}       & 0             \\   
-        Dc_{+, 1,-1}    & 2\hbar A          & Dc_{+, 1,1}   \\   
+        2\hbar A - B    & -Dc_{-, 1,0}       & 0             \\   
+        Dc_{+, 1,-1}    & 2\hbar A          & -Dc_{-, 1,1}   \\   
         0               & Dc_{+, 1,0}       & 2\hbar A + B    
     \end{pmatrix}~.
 \end{align}
@@ -88,8 +86,20 @@ elements are outside $3\times 3$). And replacing back $D = \frac{C}{2i}$ we get
 
 \begin{align}
     H = \hbar \begin{pmatrix}
-        2\hbar A - B        & \frac{C}{\sqrt{2}i}       & 0                     \\   
-        \frac{C}{\sqrt{2}i} & 2\hbar A                  & \frac{C}{\sqrt{2}i}   \\   
+        2\hbar A - B        & -\frac{C}{\sqrt{2}i}       & 0                     \\   
+        \frac{C}{\sqrt{2}i} & 2\hbar A                  & -\frac{C}{\sqrt{2}i}   \\   
         0                   & \frac{C}{\sqrt{2}i}       & 2\hbar A + B    
     \end{pmatrix}~.
 \end{align}
+
+Eigenvalues of this matrix, using a symbolic solver, were found to be 
+
+\begin{gather}
+    \lambda_1 = 2 A \hbar^2~,\\
+    \lambda_2 = 2 A \hbar^2 - \hbar\sqrt{B^2 + C^2}~,\\
+    \lambda_3 = 2 A \hbar^2 + \hbar\sqrt{B^2 + C^2}~.
+\end{gather}
+
+At first sight, these seem very different from the previously calculated values,
+but a trivial factorisation of the square root and binomial approximation to
+first order gives us exactly the values calculated vio perturbation theory!
