@@ -155,10 +155,21 @@ from part a.
 
 \questionpart
 As for the degenerate levels, corresponding to $\ket{v_{1, 0}}$ and $\ket{v_{2,
-0}}$, we apply the degenerate thoery. That is, the secular equation, as follows
+0}}$, we apply the degenerate thoery. That is, compute the matrix W, with
+elements $\bra{v_{i, 0}} H' \ket{v_{j, 1}}$ for $i, j \in \{1, 2\}$. 
 
-\begin{equation}
-    \sum_{i=1}^2 a_i (\bra{v_{j, 0}} H' \ket{v_{i, 0}} - E_i^{(0)} \delta_{ij}) = 0 \textnormal{ for } j \in \{1, 2\}
-\end{equation}
+We get
+
+\begin{align}
+    W &= \begin{pmatrix}
+        -\epsilon & 0\\
+        0 & 0
+    \end{pmatrix}~.
+\end{align}
+
+Since this matrix is diagonal, we simply read off the eigenvalues, $\epsilon$
+and 0. These are the first order corrections to the energy values. Both of them
+match the exact results we got in part a. The first one matching exactly, and
+the second one missing a second order correction.
 
 \end{alphaparts}
