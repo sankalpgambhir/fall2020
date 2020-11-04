@@ -3,36 +3,29 @@
 \hrule
 \label{appendix}
 
-\textbf{DAC}
+\textbf{I log in, therefore I am}
+\label{appendix:proof}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig/me.png}
+    \includegraphics[width=0.8\textwidth]{fig/me2.png}
+    \caption{Me logged in}
+    \label{fig:sso}
+\end{figure}
 
-The code uploaded to the Arduino for testing the DAC alone. Delays were introduced
-manually to see the changes in the output clearly. It can also be seen without the delay,
-by keeping the print there, but this is just clearer.
 
-\begin{lstlisting}[language=C++]
-void setup(){
-    Serial.begin(1000000); // why not
-    for(int i = 2; i < 6; i++){
-        pinMode(i, OUTPUT);
-    }
-}
-
-void loop(){
-    for(int i = 2; i < 5; i++){
-        digitalWrite(i, HIGH);
-        delay(500); // manually add delay
-        Serial.println(5 * (analogRead() / 1023.0)); // measured Vout in Volts
-    }
-}
-    
-\end{lstlisting}
-
-\textbf{VCCS}
+\textbf{Basic Pong}
 \label{appendix:arduino}
 
-The code uploaded to the Arduino for testing the DAC and the VCCS. We iterate 
-from a value corresponding to a value below threshold to one well above it, while
-making sure to not modify \texttt{Rx/Tx} pins (0 and 1).
+The code uploaded to the Arduino for the basic implementation of the pong game.
 
-\lstinputlisting[language=C++]{code/lab3.ino}
+\lstinputlisting[language=C++]{code/lab4.ino}
+
+\textbf{Pong with Physics}
+\label{appendix:arduinophy}
+
+The code uploaded to the Arduino with the modifications implementing speed for
+the game.
+
+\lstinputlisting[language=C++]{code/lab4_physics.ino}
 

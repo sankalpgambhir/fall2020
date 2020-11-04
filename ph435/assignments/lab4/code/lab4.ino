@@ -8,7 +8,7 @@ Ping-Pong
 #define rightPlayer 3
 #define playerPin(x) (x + 5)
   // LED outputs
-int redPin[4] = {5, 9, 10, 11}; // pins grouped by the same frequency
+int redPin[4] = {5, 9, 10, 11}; // pins grouped by the same frequency`
 int grePin[2] = {7, 8}; // use playerPin(x) macro instead for compile time resolution
 
 
@@ -21,7 +21,7 @@ volatile bool leftHit = false, rightHit = false;
 bool lightOn = 0;
 uint16_t lightOnStart = 0;
 unsigned long ballWaitStart = 0; // time ball has been near player
-uint16_t timeLeftHit = 0, timeRightHit = 0;
+volatile uint16_t timeLeftHit = 0, timeRightHit = 0;
 uint8_t victory = 0; // has a player won? if yes, which?
 
 // functions
@@ -48,7 +48,7 @@ void loop(){
     Serial.println(state);
 
     if(lightOn){
-      if((millis() - lightOnStart) >= maxWait){
+      if((millis() - lightOnStart) >= 300){
         digitalWrite(playerPin(leftPlayer), 0);
         digitalWrite(playerPin(rightPlayer), 0);
       }
@@ -77,12 +77,12 @@ void loop(){
     case 0:
       // initial state
       // wait for first input
-      if(leftHit) {state = 1; leftHit = 0; ball[0] += ball[1];}
+      if(leftHit) {state = 1; leftHit = 0; ball[0] += ball[1]; changeOutputs();}
       break;
 
     case 1:
       // game in play
-      delay(300); // delay to control clock speed
+      delay(600); // delay to control clock speed
       if(ball[0] != 0 && ball[0] != 3){
         // somewhere in the middle
         ball[0] += ball[1]; // x = x + v.dt
@@ -109,6 +109,7 @@ void loop(){
       leftHit = false; // reset
       digitalWrite(playerPin(leftPlayer), 1); // light up
       lightOn = true; lightOnStart = millis();
+      ball[0] += ball[1]; changeOutputs();
       state = 1;
       break;
     
@@ -119,12 +120,13 @@ void loop(){
         state = 4;
         break;
       }
-      if(!leftHit) break;
+      if(!rightHit) break;
 
       ball[1] = -1; // travel to left
       rightHit = false; // reset
       digitalWrite(playerPin(rightPlayer), 1); // light up
       lightOn = true; lightOnStart = millis();
+      ball[0] += ball[1]; changeOutputs();
       state = 1;
       break;
     

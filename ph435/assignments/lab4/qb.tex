@@ -1,18 +1,63 @@
 \question*{
-    Design a 4-bit DAC
+    Physics and Table Tennis
 }
 
-\begin{enumerate}
-    \item Setup done.
-    \item \textbf{$R_x = 1k \Omega$.} The resistors simply need to be large enough
-            to keep the current under the Arduino limits and be lower than the 
-            load voltage for Part E.
-    \item See \autoref{fig:dacconnected}.
-\end{enumerate}
+\begin{arabicparts}
+    \questionpart The ISR code was unmodified. The previous implementation
+    already included a press timer. The same was used to now also modify the
+    delay between the ball skipping across the LEDs. The whole code may be found
+    in the Appendix.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.4\textwidth]{fig/arduinoconnected-min.jpg}
-    \caption{Connected DAC.}
-    \label{fig:dacconnected}
-\end{figure}
+    \begin{lstlisting}[language=C++]
+// <-- Indicates a skip
+uint16_t delayBySpeed = 600;
+//
+void loop(){
+    //
+
+    switch (state)
+    {
+    //
+
+    case 1:
+      // game in play
+      delay(600); // delay to control clock speed
+      //
+      break;
+    //
+    case 3:
+      // ball in left range
+      //
+      if(!leftHit) break;
+      //
+      ball[1] = 1; // travel to right
+      //
+      delayBySpeed = 300 + (millis() - ballWaitStart > 700 ? 0 : 300);
+      break;
+    case 4:
+        // ball in right range
+        //
+        if(!rightHit) break;
+        //
+        ball[1] = -1; // travel to left
+        //
+        delayBySpeed = 300 + (millis() - ballWaitStart > 700 ? 0 : 300);
+        break;
+    
+   //
+}
+
+//
+    \end{lstlisting}
+
+    \questionpart \texttt{t = 0} was already implemented by way of
+    \texttt{ballWaitStart} (measured against \texttt{millis()} instead of
+    specifically counting).
+
+    \questionpart The final demonstration (though I found the speed changes hard
+    to notice on video, they are noticeable while playing) is posted in the
+    \href{https://drive.google.com/drive/folders/1oetbbPwgUUYHVBNe5_pIktCHrrqsNl7a?usp=sharing}{same
+    Google Drive Folder}. The entire code is present in the Appendix for your
+    viewing pleasure.
+
+\end{arabicparts}

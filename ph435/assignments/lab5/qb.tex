@@ -1,0 +1,25 @@
+\question*{
+    Double speedmeter that also measures phase
+}
+
+Code uploaded is in the appendix. I measured the time difference between the two
+outputs from the square wave generator, flipped version of each other. The time
+difference observed, \textbf{$740 \mu s$} is in agreement with the expected
+value of $757 \mu s$ as per the observed frequency in Part 2.
+
+The state diagram is as follows
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+      \node[state] (q1) {\texttt{diff = } $\downarrow$};
+      \node[state] at (6,0) (q2) {\texttt{diff = } $\uparrow$};
+
+      \draw (q1) edge[loop left]        node{$1 \uparrow $} (q1)
+            (q1) edge[bend left, above] node{$0 \uparrow$}  (q2)
+            (q2) edge[bend left, below] node{$1 \uparrow$}  (q1)
+            (q2) edge[loop right]        node{$0 \uparrow $} (q2);
+  \end{tikzpicture}
+  \caption{State Diagram for Phase Measuring}
+  \label{fig:p3sd}
+\end{figure}
