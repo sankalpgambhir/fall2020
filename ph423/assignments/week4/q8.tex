@@ -1,5 +1,53 @@
 \question
 
+\parth{Doing question 8, might have to check later}
+\sankalp{No, me BRUH}
+
+    The original Hamiltonian is of the form $H_0 = AL^2 + BL_z$. There's a small perturbation added to this Hamiltonian of the form $H_1 = CL_y$, where C is a constant. Thus, we have
+
+    \begin{gather*}
+        H_0 = AL^2 + BL_z \\
+        L_y = \left( \frac{L_+ - L_-}{2i} \right)
+    \end{gather*}
+
+    The eigenkets of $H_0$ are the simultaneous eigenkets of $L^2$ and $L_z$, $\ket{l,m}$. The energy eigenvalues here are $E_{l,m} = A\hbar^2l(l+1) + B\hbar m$.
+
+    $L_y = \left( \frac{L_+ - L_-}{2i} \right)$, on the other hand, is off-diagonal in the $\ket{l,m}$ basis (owing to the ladder operators seen). Due to this, the first order energy shift $\bra{l,m}CL_y\ket{l,m}$ vanishes, and we are left with the second order energy shifts
+
+    \begin{equation*}
+        \begin{split}
+            E^{'}_{l,m} & = E_{l,m}^{(0)} + C^2\sum_{m^{'} \neq m} \frac{|\bra{l,m^{'}}\left( \frac{L_+ - L_-}{2i} \right)\ket{l,m}|^2}{E_{l,m}^{(0)} - E_{l,m^{'}}^{(0)}} + O(C^3) \\
+            & = E_{l,m}^{(0)} + (C\hbar)^2\frac{(l-m)(l + m + 1)}{-4B\hbar} + (C\hbar)^2\frac{(l+m)(l - m + 1)}{4B\hbar} + O(C^3) \\
+            & = E_{l,m}^{(0)} + \hbar m \frac{C^2}{2B} + O(C^3)
+        \end{split}
+    \end{equation*}
+
+    Similarly, the shifts in the eigenfunctions are
+    \begin{equation*}
+        \begin{split}
+           \ket{l,m} & = \ket{l,m}_0 + C\sum_{m' \neq m} \frac{\bra{l,m'}\left( \frac{L_+ - L_-}{2i} \right)\ket{l,m}}{E_{l,m}^{(0)} - E_{l,m^{'}}^{(0)}} \ket{l,m^{'}} \\
+           & = \ket{l,m}_0 + \frac{C}{2i}\sum_{m' \neq m} \frac{\bra{l,m'}\left( L_+ - L_- \right)\ket{l,m}}{E_{l,m}^{(0)} - E_{l,m^{'}}^{(0)}} \ket{l,m^{'}}\\
+           & = \ket{l,m}_0 + \frac{C\hbar}{2i}\sum_{m' \neq m} \frac{\sqrt{l(l+1) - m(m+1)}\bra{l,m'}\ket{l,m+1} - \sqrt{l(l+1) - m(m-1)}\bra{l,m'}\ket{l,m-1}}{E_{l,m}^{(0)} - E_{l,m^{'}}^{(0)}} \ket{l,m^{'}}
+        \end{split}
+    \end{equation*}
+
+
+    We make these calculations for the case $l = 1$. Thus, the corrections in each state corresponding to $m = -1, 0, +1$ are -
+
+    \begin{gather*}
+        E^{'}_{1,-1} = E_{1,-1} - \frac{C^2\hbar}{2B} = 2A\hbar^2 - \frac{(C^2 + 2B^2)\hbar}{2B}\\
+        E^{'}_{1,0} = E_{1,0} = 2A\hbar^2\\
+        E^{'}_{1,1} = E_{1,1} + \frac{C^2\hbar}{2B} = 2A\hbar^2 + \frac{(C^2 + 2B^2)\hbar}{2B}
+    \end{gather*}
+
+    \begin{gather*}
+        \ket{1,-1}^{'} = \ket{1,-1} - \frac{C}{\sqrt{2}Bi}\ket{1,0} \\
+        \ket{1,0}^{'} = \ket{1,0} - \frac{C}{\sqrt{2}Bi}(\ket{1,1} + \ket{1,-1})\\
+        \ket{1,1}^{'} = \ket{1,1} - \frac{C}{\sqrt{2}Bi}\ket{1,0} 
+    \end{gather*}
+
+
+
 Solving the system exactly, we recognize that the new states must be withing the
 linear span of the $\ket{l, m}$ states. We then write the effect of the
 Hamiltonian on an arbitrary such state to obtain the eigenvalue condition.
