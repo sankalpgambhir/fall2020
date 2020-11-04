@@ -1,1 +1,167 @@
-\question
+\newcounter{draft}
+\setcounter{draft}{1}
+\newcommand{\unitvectorn}{\hat{\textbf{n}}}
+\newcommand{\sigmavector}{\boldsymbol{\sigma}}
+
+\input{common.tex}
+
+\begin{document}
+
+    \parth{Doing question 3, might have to check later}
+
+    \question*{Consider the isotropic three dimensional harmonic oscillator under the influence of the perturbation $H^{'} = \lambda x^2yz$. Discuss the effect of the perturbation on the ground state and the first excited state of the isotropic oscillator.}
+
+    The 3D isotropic oscillator has a potential profile that looks like the follows - 
+
+    \begin{equation*}
+        V(x,y,z) = \frac{1}{2}m\omega^2(x^2 + y^2 + z^2)
+    \end{equation*}
+
+    We know that for the 1D harmonic oscillator ($V(x) = 1/2 m\omega^2x^2$), the eigenfunctions for the same take the following form
+
+    \begin{equation*}
+        \psi_n(x) = \frac{1}{\sqrt{2^nn!}} \left( \frac{m\omega}{\pi\hbar} \right)^{1/4} . e^{-\frac{m\omega x^2}{2\hbar}} . H_n \left( \sqrt{\frac{m\omega}{\hbar}} x \right)
+    \end{equation*}
+
+    where $H_n(x)$ are the Hermite polynomials.
+
+    \begin{gather*}
+        H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} (e^{-z^2}) \\
+        \text{with} \; H_0(x) = 1 \, , \, H_1(x) = 2x
+    \end{gather*}
+
+    The potential profile in the 3D Harmonic oscillator is a separable function in $x,y$ and $z$. Which means that the eigenfunctions to the Hamiltonian for the 3D harmonic oscillator can be derived as a direct product of the eigenfunctions of the 1D harmonic oscillators in $x,y$ and $z$ directions.
+
+    \begin{equation*}
+        \psi_{n_xn_yn_z} = \frac{1}{\sqrt{2^{n_x + n_y + n_z} n_x! n_y! n_z!}} \left( \frac{m\omega}{\pi\hbar} \right)^{3/4} . e^{-\frac{m\omega (x^2 + y^2 + z^2)}{2\hbar}} . H_{n_x} \left( \sqrt{\frac{m\omega}{\hbar}} x \right) . H_{n_y} \left( \sqrt{\frac{m\omega}{\hbar}} y \right) . H_{n_z} \left( \sqrt{\frac{m\omega}{\hbar}} z \right)
+    \end{equation*}
+
+    with the energy of the eigenstate being
+
+    \begin{equation*}
+        E_{n_xn_yn_z} = \left( n_x + n_y + n_z + \frac{3}{2} \right) \hbar\omega
+    \end{equation*}
+
+    Thus, the ground state for the 3D Harmonic oscillator is - 
+
+    \begin{equation*}
+        \psi_{000} = \left( \frac{m\omega}{\pi\hbar} \right)^{3/4} e^{\frac{-m\omega (x^2 + y^2 + z^2)}{2\hbar}}
+    \end{equation*}
+
+    with energy $3/2 \hbar\omega$
+
+    The first excited state is triply degenerate, since any of $n_x$, $n_y$ and $n_z$ can be changed to 1 and thus we have three degenerate eigenstates
+
+    \begin{gather*}
+        \psi_{100} = \frac{2}{\pi^{3/4}} \left( \frac{m\omega}{\hbar} \right)^{5/4} x e^{\frac{-m\omega (x^2 + y^2 + z^2)}{2\hbar}} \\
+        \psi_{010} = \frac{2}{\pi^{3/4}} \left( \frac{m\omega}{\hbar} \right)^{5/4} y e^{\frac{-m\omega (x^2 + y^2 + z^2)}{2\hbar}} \\
+        \psi_{001} = \frac{2}{\pi^{3/4}} \left( \frac{m\omega}{\hbar} \right)^{5/4} z e^{\frac{-m\omega (x^2 + y^2 + z^2)}{2\hbar}} 
+    \end{gather*}
+
+    with energies $5/2 \hbar\omega$
+
+    We now introduce a perturbation to this system, given as
+
+    \begin{equation*}
+        H^{'} = \lambda x^2yz
+    \end{equation*}
+
+    for a constant $\lambda$. Since the ground state is non-degenerate, we can use the non-degenerate perturbation theory to calculate the correction to the energy eigenvalue. So
+
+    \begin{equation*}
+        \begin{split}
+            E_{000,1} & = \langle \psi_{000} | H^{'} | \psi_{000} \rangle \\
+            & = \lambda \int \int \int |\psi_{000}(x,y,z)|^2 x^2yz \, dx \, dy \, dz
+        \end{split}
+    \end{equation*}
+
+    The integrals over y and z are zero, because $\psi_{000}$ is an even function over x, y and z, and the perturbation $H^{'}$ is odd in y and z. Which makes the integrals over y and z odd, and thus they equate to 0. Thus
+
+    \begin{equation*}
+        E_{000,1} = 0
+    \end{equation*}
+
+    and thus, there is no correction to the ground state energy. $E^{'}_{000} = E_{000} = \frac{3}{2} \hbar \omega$
+
+    For the first excited state, we use the degenerate perturbation theory. We thus need to calculate the matrix elements $W_{ab} = \bra{n_xn_yn_z}H^{'}\ket{m_xm_ym_z}$. This means
+
+    \begin{equation*}
+        W_{ab} = \lambda\bra{n_x}x^2\ket{m_x}\bra{n_y}y\ket{m_y}\bra{n_z}z\ket{m_z}
+    \end{equation*}
+
+    We just consider the matrix elements where one of $n_x , n_y , n_z$ is 1 and the others are 0, and likewise for the $m_x , m_y , m_z$
+
+    Now we know that
+
+    \begin{equation*}
+        \begin{split}
+            \bra{n_x}x\ket{n_x} & = \int \psi_{n_x}(x)x\psi_{n_x}(x) \, dx \\
+            & = \int |\psi_{n_x}|^2 x \, dx = 0
+        \end{split}
+    \end{equation*}
+
+    since the integrand is an odd function.
+
+    For $n_x = \neq m_x$, we know that
+
+    \begin{equation*}
+        \begin{split}
+            \bra{n_x}x\ket{m_x} & = \int \psi_{n_x}(x)x\psi_{m_x}(x) \, dx \\
+            & = \sum_{m_x \neq n_x} \frac{|\bra{n_x}x\ket{m_x}|^2}{(m_x - n_x) \hbar\omega} \\
+            & = \sqrt{\frac{\hbar}{2m\omega}} \sum_{m_x \neq n_x} \frac{\left[ \sqrt{m_x + 1}\delta_{n_x, m_x + 1} + \sqrt{m_x}\delta_{n_x, m_x - 1} \right]^2}{(m_x - n_x)} \\
+            & = \sqrt{\frac{\hbar}{2m\omega}} \left( \sqrt{m_x + 1}\delta_{n_x, m_x + 1} + \sqrt{m_x}\delta_{n_x, m_x - 1} \right)
+        \end{split}
+    \end{equation*}
+
+    $\bra{n_x}x^2\ket{m_x} = 0$, if $n_x \neq m_x$, since the integrand becomes an odd function, with an $x^3$ inside. Thus, for the overall $W_{ab}$, the only non-zero elements will have $n_x = m_x$, $n_y \neq m_y$ and $n_z \neq m_z$. The elements that satisfy this are 
+
+    \begin{gather*}
+        W_{010, 001} = \lambda\bra{0}x^2\ket{0}\bra{1}y\ket{0}\bra{0}z\ket{1} \\
+        W_{001, 010} = \lambda\bra{0}x^2\ket{0}\bra{0}y\ket{1}\bra{1}z\ket{0}
+    \end{gather*}
+
+    For $\bra{0}x^2\ket{0}$, we have
+
+    \begin{equation*}
+        \begin{split}
+            \bra{0}x^2\ket{0} & = \int \left( \frac{m\omega}{\pi\hbar}\right)^{1/2} . e^{-\frac{m\omega x^2}{\hbar}} x^2 \, dx \\
+            & = \left( \frac{m\omega}{\pi\hbar}\right)^{1/2} \int_{-\infty}^{\infty}x^2 e^{-\frac{m\omega x^2}{\hbar}} \, dx \\
+        \end{split}
+    \end{equation*}
+
+    let $\left( \sqrt{\frac{m\omega}{\hbar}} x \right) = y$
+
+    \begin{equation*}
+        \begin{split}
+            \left( \frac{m\omega}{\pi\hbar}\right)^{1/2} \int_{-\infty}^{\infty}x^2 e^{-\frac{m\omega x^2}{\hbar}} \, dx & = \left( \frac{m\omega}{\pi\hbar}\right)^{1/2} * \left( \frac{\hbar}{m\omega} \right) * \left( \sqrt{\frac{\hbar}{m\omega}} \right) \int_{-\infty}^{\infty}y^2 e^{-y^2} \, dy \\
+            & = \frac{1}{\sqrt{\pi}} * \left( \frac{\hbar}{m\omega} \right) * \frac{\sqrt{\pi}}{2} \\
+            & = \frac{\hbar}{2m\omega}
+        \end{split}
+    \end{equation*}
+
+    Thus, the $W_{ab}$ matrix becomes -
+
+    \begin{equation*}
+        W_{ab} = \lambda
+        \begin{bmatrix}
+            0 & 0 & 0 \\
+            0 & 0 & \left( \frac{\hbar}{2m\omega} \right)^2 \\
+            0 & \left( \frac{\hbar}{2m\omega} \right)^2 & 0 
+        \end{bmatrix}
+    \end{equation*}
+
+    Thus, the energy corrections, are the eigenvalues of $W_{ab}$, which are computed as 
+
+    \begin{equation*}
+        -E\left( E^2 - \left( \frac{\hbar}{2m\omega} \right)^4 \right) = 0 
+    \end{equation*}
+
+    \begin{equation*}
+        \implies E_1 = 0, \pm\lambda\left( \frac{\hbar}{2m\omega} \right)^2
+    \end{equation*}
+
+    Thus, the perturbation splits the degeneracy. It leaves $E^{'}_{100} = E_{100} = \frac{5}{2}\hbar\omega$ while the degeneracy in $\psi_{010}$ and $\psi_{001}$ is lifted with their energy eigenvalues changing to $E = \frac{5}{2}\hbar\omega \pm\lambda\left( \frac{\hbar}{2m\omega} \right)^2$.
+
+    This is the effect of the perturbation on the ground state and the first excited state of the isotropic oscillator.
+
+\end{document}
