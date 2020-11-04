@@ -1,0 +1,28 @@
+% is draft? display comments and notes?
+\newcounter{draft}
+\setcounter{draft}{1}
+
+% input general format
+\input{../macro}
+
+% ooverride title defaults
+\renewcommand{\hwnum}{4}
+\renewcommand{\hwdate}{November 4, 2020}
+
+\begin{document}
+    \maketitle
+
+    \setcounter{questionCounter}{1}
+    \input{q2}
+
+    \input{q3}
+
+    \input{q4}
+
+    \setcounter{questionCounter}{5}
+    \input{q6}
+
+    \setcounter{questionCounter}{7} % not needed but eh uniformity
+    \input{q8}
+
+\end{document}
