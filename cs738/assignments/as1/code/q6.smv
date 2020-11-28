@@ -1,0 +1,46 @@
+
+-- NOT looped
+MODULE x1
+
+VAR 
+    state: {on, off};
+
+ASSIGN
+    init(state) := off;
+    next(state) := 
+        case
+            out : off;
+            !out: on;
+        esac;
+
+DEFINE 
+    out := (state = on);
+
+-- XOR looped
+MODULE x2(inp)
+
+VAR 
+    state: {on, off};
+
+ASSIGN
+    init(state) := off;
+    next(state) := 
+        case
+             inp &  out : off;
+             inp & !out : on;
+            !inp &  out : on;
+            !inp & !out : off;
+        esac;
+
+DEFINE 
+    out := (state = on);
+
+MODULE main
+
+VAR
+    m0: x1();
+    m1: x2(m0.out);
+
+SPEC
+
+AG (m0.out <-> AX (! m0.out))

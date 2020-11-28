@@ -1,0 +1,32 @@
+\question
+
+\begin{arabicparts}
+
+    \questionpart
+    \renewcommand{\labelenumii}{(\alph{enumii})}
+    \begin{enumerate}
+        \setcounter{enumii}{1}
+        \item $\eventually\finally (\phi \lor \psi) \equiv \eventually\finally
+        \phi \lor \eventually\finally \psi$ --- Equivalent, proved earlier.
+
+        \item $\always\globally (\phi \lor \psi) \equiv \always\globally \phi
+            \lor \eventually\finally \psi$ --- Equivalent.
+        
+        \setcounter{enumii}{6}
+        \item $\top \equiv \always\globally\phi \Rightarrow \eventually\globally\phi$ --- Equivalent.
+        
+        \item $\top \equiv \eventually\globally\phi \Rightarrow
+            \always\globally\phi$ --- Not equivalent. Consider the model in
+            \autoref{fig:q4ts} and take the initial state to be $s_1$, with
+            $\phi = r$. The self-loop causes $\eventually\globally \phi$ to
+            hold, but on no other path does $\globally\phi$ hold, so the
+            implication breaks.
+    \end{enumerate}
+
+    \questionpart 
+    \begin{enumerate}
+        \item $\always\globally (\phi \land \psi) \equiv \always\globally \phi ? \always\globally \psi$ --- $? \rightarrow \land$
+        \item $\eventually\finally\lnot\phi \equiv \lnot ?? \phi$ --- $?? \rightarrow \always\globally$
+    \end{enumerate}
+
+\end{arabicparts}

@@ -1,0 +1,63 @@
+\question
+
+\begin{alphaparts}
+    \questionpart To prove: $\globally \phi \equiv \phi \land \lnext \globally
+    \phi$
+
+    Consider an infinite path, $\pi$ represented by the word $\prod_i\geq 0 s_i$ in a
+    model $\model$.
+
+    \begin{itemize}
+        \item[$\Rightarrow$ direction.] 
+            If $\model, \pi \models \globally \phi$ then by definition, all
+            infinite suffixes of $\pi$ satisfy $\phi$. In particular,
+            dropping $s_0$, the path $\pi^1$ satisfies $\globally \phi$,
+            i.e. $\pi$ satisfies $\lnext\globally \phi$. Combined with the
+            fact that the trivial zeroth suffix $\pi$ itself satisfies
+            $\phi$, we get the implication.
+        \item[$\Leftarrow$ direction.] 
+            If $\model, \pi \models \phi \land \lnext \globally \phi$, then once
+            again by definition of Globally, as well as Next, all infinite
+            suffixes of $\pi^1$ satisfy $\phi$, which leaves only one suffix of
+            $\pi$, which is $\pi^0$ or $\pi$ itself but it satsifies $\phi$ due
+            to the first clause of our formula. Thus, all infinite suffixes of
+            $\pi$ satisfy $\phi$, which is equivalent to saying it satisfies
+            $\globally \phi$.
+    \end{itemize}
+
+    Since this is true for any path $\pi$ of the arbitrary model, the two given
+    formulae are equivalent.
+
+    \questionpart To prove: $\eventually\finally (\phi_1 \lor \phi_2) \equiv
+    \eventually\finally \phi_1 \lor \eventually\finally \phi_2$
+
+    Consider a model $\model$.
+
+    \begin{itemize}
+        \item[$\Rightarrow$ direction.] 
+            If $\model \models \eventually\finally (\phi_1 \lor \phi_2)$, then
+            there exists a path $\pi$ such that $\model, \pi \models
+            \finally(\phi_1 \lor\phi_2)$. So, there exists a suffix of $\pi$
+            which satisfies $\phi_1 \lor\phi_2$, i.e., at the first state of
+            that suffix, one of $\phi_1$ and $\phi_2$ holds. Suppose $\phi_1$
+            holds. This implies that the path satisfies $\finally\phi_1$ and so
+            $\model \models \eventually\finally\phi_1$. By the definition of the
+            Or operator, this Or something trivially holds, and we get our
+            equivalence. A similar argument follows in the case $\phi_1$ does
+            not hold but $\phi_2$ does on the chosen suffix.
+        \item[$\Leftarrow$ direction.] 
+            If $\model \models \eventually\finally \phi_1 \lor
+            \eventually\finally \phi_2$, there must exist a path $\pi_1$ such
+            that $\model, \pi_1 \models \finally\phi_1$ or a path $\pi_2$ such
+            that $\model, \pi_2 \models \finally\phi_2$. Suppose the first is
+            true, then there is a state in $\pi_1$ such that $\phi_1$ holds
+            there. But by the definition of the Or operator, this implies that
+            $\phi_1 \lor \phi_2$ holds at that state, and by extension, $\model,
+            \pi_1 \models \eventually\finally (\phi_1 \lor \phi_2)$. A similar
+            argument follows again in the case the second ($\pi_2$ condition)
+            holds.
+    \end{itemize}
+
+    Since this is true for an arbitrary model, The two given
+    formulae are equivalent.
+\end{alphaparts}

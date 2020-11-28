@@ -1,16 +1,21 @@
 \input{../../../common/common}
 
+\usepackage{forest}
+
 % actual macros
 % ctl*
 %   ctl
+\newcommand{\always}{\,\textsf{A}\,}
+\newcommand{\eventually}{\,\textsf{E}\,}
 %   ltl
 \newcommand{\until}{\,\textsf{U}\,}
 \newcommand{\release}{\,\textsf{R}\,}
 \newcommand{\globally}{\,\textsf{G}\,}
 \newcommand{\finally}{\,\textsf{F}\,}
+\newcommand{\lnext}{\,\textsf{X}\,}
 
 % general semantics
-\newcommand{\model}{M}
+\newcommand{\model}{\mathcal{M}}
 \newcommand{\treepath}{\pi}
 \newcommand{\paths}[2]{\textsf{Paths}(#1, #2)}
 

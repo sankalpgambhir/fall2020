@@ -1,0 +1,70 @@
+\question
+
+\begin{alphaparts}
+
+    \questionpart The formulae would be classified as
+
+    \begin{enumerate}
+        \item $\globally \finally (p \land \lnot \lnext p)$ --- \textbf{(A)} It
+                is a well formed LTL over an infinite word, or path in a
+                computation tree, however, due to the use of $\globally,
+                \finally, \lnext$ free of state qualifier $\always$ wouuld make
+                this (D), not a well formed formula if considered over a
+                transition system (i.e. well formed per the usual LTL grammar,
+                but not well formed as a subset of CTL$^*$)
+
+        \item $\always \lnot \globally \lnot p$ --- \textbf{(C)}
+         
+        \item $\always \eventually \finally r$ --- \textbf{(C)} I am unsure
+            about $\always$ and $\eventually$ occuring together but the grammar
+            seems to allow it. In its current form it is not a valid CTL formula,
+            however, $\always\eventually$ is functionally equivalent to $\always$ so
+            it is equivalent to a CTL formula, same as the previous part.
+
+        \item $\finally(p \Rightarrow \globally  r) \lor (\lnot q) \until p$ ---
+                \textbf{(A)} Could also be (D), same argument as 1.
+
+        \item $\always (\eventually (p \until r) \lor \lnext q)$ --- \textbf{(C)} Use of
+                Next without attached state qualifier.
+    \end{enumerate}
+
+    \questionpart The formula is $\always\globally (p \Rightarrow \always \lnext
+    \eventually[q\until r])$. Its parse tree is
+
+    \begin{center}
+        \begin{forest}
+            [$\always$
+                [$\globally$
+                    [$\Rightarrow$
+                        [$p$]
+                        [$\always$
+                            [$\lnext$
+                                [$\eventually$
+                                    [$\until$
+                                        [$q$]
+                                        [$r$]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        \end{forest}        
+    \end{center}
+
+    \questionpart The formula is $\always (p \until \eventually\finally r)$. Its
+    parse tree (in CTL) is
+
+    \begin{center}
+        \begin{forest}
+            [$\always\until$
+                [$p$]
+                [$\eventually\finally$
+                    [$r$]
+                ]
+            ]
+        \end{forest}        
+    \end{center}
+
+\end{alphaparts}

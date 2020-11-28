@@ -1,0 +1,66 @@
+\question
+
+I used the following code to encode the system
+
+\lstinputlisting[language=VHDL]{code/q6.smv}
+
+And received the following output from simulation (the specification was added after simulation)
+
+\begin{verbatim}
+    ▲ assignments/as1/code NuSMV -int q6.smv
+    ... LICENSE TRIMMED
+    
+    NuSMV > go
+    NuSMV > pick_state -r
+    NuSMV > print_current_state -v
+    Current state is 1.1
+    m0.state = off
+    m1.state = off
+    NuSMV > simulate -r -k 5
+    ********  Simulation Starting From State 1.1   ********
+    NuSMV > show_traces -t
+    There is 1 trace currently available.
+    NuSMV > show_traces -v
+        <!-- ################### Trace number: 1 ################### -->
+    Trace Description: Simulation Trace
+    Trace Type: Simulation
+      -> State: 1.1 <-
+        m0.state = off
+        m1.state = off
+        m0.out = FALSE
+        m1.out = FALSE
+      -> State: 1.2 <-
+        m0.state = on
+        m1.state = off
+        m0.out = TRUE
+        m1.out = FALSE
+      -> State: 1.3 <-
+        m0.state = off
+        m1.state = on
+        m0.out = FALSE
+        m1.out = TRUE
+      -> State: 1.4 <-
+        m0.state = on
+        m1.state = on
+        m0.out = TRUE
+        m1.out = TRUE
+      -> State: 1.5 <-
+        m0.state = off
+        m1.state = off
+        m0.out = FALSE
+        m1.out = FALSE
+      -> State: 1.6 <-
+        m0.state = on
+        m1.state = off
+        m0.out = TRUE
+        m1.out = FALSE
+    NuSMV >
+\end{verbatim}
+
+The required property holds, as checked in another run of the same program in
+batch mode.
+
+\begin{lstlisting}
+    SPEC
+    AG (m0.out <-> AX (! m0.out))
+\end{lstlisting}
