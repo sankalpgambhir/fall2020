@@ -43,8 +43,11 @@ https://www.lausanne.org/content/lga/2014-09/western-buddhism
 # Post WW2
 
 In the latter half of the 20th century, the west saw an exponential rise in
-consumerism and a revaluation of faith, with many looking for altered states of
+consumerism and a revaluation of faith, with mass stress caused by rapidly
+modernizing work environemnts, led many to look for altered states of
 consciousness to detach themselves from the dissatisfactory developments. This
 gave rise to the psychedelic movement in the 70s, and over a larger period,
 attracted people, especially those looking for more sober, spiritual
 experiences, to Buddhist schools established by the immigrant influx from Asia.
+
+https://en.wikipedia.org/wiki/Counterculture_of_the_1960s
