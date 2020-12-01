@@ -28,4 +28,26 @@ economic, political, social, and ecological problems of society. Draws on from t
  - Retributive Justice as an ideal harms peace. Eg. Isarel Palestine conflict continuation. Compassion for all parties suffering is important 
  - Working for world peace requires inner peace. 
  - Caring for others is greater personal happiness 
- - 
+ - Personal spiritual growth used to help you undertake social activities better. 
+ - Compassion comes from no - self selflessness, understanding that there is no distinction between self and others. 
+## Economics 
+- Buddha proposed the Madhyapratipat - or the middle way. He did not endorse poverty. 
+- Poverty is a terrible form of suffering, that should not be allowed to exist. 
+- Engaged buddhism believes in humanistic socialism. This has led to a great amount of consumption that is bad for the world. People feel like their value is only dependent on the cost of the things they own. Dukkha leads to this desire that cannot be quenched. Focus should be on taking care of the interdependent needs (The Right Livelihood )
+- Thailand monks preach against consumerism to people who have taken on huge debts. 
+- You can interpret the 5th precept to avoid consumerism of things that are toxic to you. Unending growth is unsustainable. Desires are the root of dukkha and so feeding those desires will still lead to more dukkha. 
+- Focus is on becoming something better. Based on annata, you are not who you are but what you can become. The focus therefore is on improving youself always. 
+- Buddhist notion of interdependence is used to justify building interdependent communities with harmony. Focus is given on incorporating multicultural focus on the varioud ethnicities in Sarvoday. 
+- Shared, communal meals etc. 
+- 
+## Ecology 
+- Caring for the environment important par of engaged buddhism - Eg protesting against nuclear development and waste dumping in tibet. 
+- Interdependence / Pratityasamuttapada is used to show how we are connected to ecology and the environment. Existence is a web of connectedness. 
+- Buddhism seems the environemnt as having value to humans as well as intrinsic values thorugh annata. Animans are sentient beings. We should try and stop their suffering 
+- Deep ecology - inspired by Spinoza, Gandhi and Buddhism. Let go of anthropomorphism 
+- Mindfullness helps connect with nature, to realise annata. 
+- Inspired rainforest action network in the USA by realizing that there is no separation between the rainforest and him. 
+- Ability to come out of despair. Acknowledge that it is real, and participate in the world's pain. 
+- Thailands ecology monks, focus on deforestation. Ordain trees in forests as monks to prevent people from cutting it down . 
+- Don't treat corporates as evil, try to work with them. 
+- 
