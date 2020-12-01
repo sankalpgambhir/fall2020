@@ -27,14 +27,14 @@ the relatively isolated asian culture, and its adaptability.
 - The first, arising from the Dalai Lama's exit due to Tibet's political
   situation, put Buddhism front and center on the world stage, giving many the
   insight and opportunity needed to delve in it, coupled with an outward flux of
-  Lamas establishign themselves in the United States and subsequently in western
+  Lamas establishing themselves in the United States and subsequently in western
   Europe.
 
 - The second, its adaptability. Buddhism at its core is more minimal than a
   religion, less weighted. It is a way of life. A set of guidelines, a path to
   be walked on to satisfaction and happiness, with an interpretation of its
   destination. Political and social issues in the 20th century synergized with
-  this adaptability to form many branches of Buddhism. To each his own path to
+  this adaptability to form many branches of Buddhism; to each his own path to
   happiness. Several minor branches such as feminist Buddhism and Gay Buddhism
   have been noted, springing up alongside the respective social movements. 
 
