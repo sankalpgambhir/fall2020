@@ -10,7 +10,7 @@ def create_layers():
     layer_list = tf_file_stuff.split("\n")
 
     layers = []
-        i = 0
+    i = 0
 
     while i < len(layer_list):
         if (layer_list[i] != "ReLU"):
