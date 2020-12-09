@@ -4,7 +4,9 @@
 
 For centuries, Buddhism remained isolated to East Asia, and while branches of it
 emerged, influenced by different philosophies, cultural influence would remain
-limited till it did not escape its confines. Buddhism made contact with the
+limited till it did not escape its confines. 
+```
+Buddhism made contact with the
 European Christian community in the 19th century, then dismissed by most
 religious figures as an "idolatric produce of Indian pessimism". However, the
 viewpoint did not remain unchallenged for long, as with the rise of Buddhist
@@ -17,6 +19,7 @@ At the same time, a rise in Darwinistic philosophy and a stronger belief in
 science among people was loosening faith in Christianity, while many scholars
 argued for Buddhism as a more consistent philosophy, encouraging reason and
 observation more so than faith.
+```
 
 With expansion to the west, Buddhism would see synchronisation with several
 cultural movements, branching and morphing to the needs of the students as much
