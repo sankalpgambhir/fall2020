@@ -13,8 +13,8 @@ def check_model(layer, input_vector, correct_ans):
     for i in range(len(layer)):
         w, b = layer[i]
         
-        w_z = [[z3.Int("w" + "_" + str(i) + "_" + str(j) + "_" + str(k)) for j in range(np.shape(w)[0])] for k in range(np.shape(w)[1])]
-        b_z = [z3.Int("b" + "_" + str(i) + "_" + str(j)) for j in range(np.shape(b)[0])]
+        w_z = [[z3.Real("w" + "_" + str(i) + "_" + str(j) + "_" + str(k)) for j in range(np.shape(w)[0])] for k in range(np.shape(w)[1])]
+        b_z = [z3.Real("b" + "_" + str(i) + "_" + str(j)) for j in range(np.shape(b)[0])]
         
         w_z_const = z3.And([(w_z[j][k] == w[j][k]) for j in range(np.shape(w)[0]) for k in range(np.shape(w)[1])])
         b_z_const = z3.And([(b_z[j] == b[j]) for j in range(np.shape(b)[0])])
@@ -25,10 +25,7 @@ def check_model(layer, input_vector, correct_ans):
 
         pass
 
-    inp = [z3.Int("i_" + str(j)) for j in range(np.shape(layer[0][0])[1])]
-
-    # constraint input by layer
-    sol.add(constrain_input(inp, input_vector, 0))
+    inp = [z3.Real("i_" + str(j)) for j in range(np.shape(layer[0][0])[1])]
 
     # contains result of each layer, last element at the end is the output
     res = [inp]
@@ -37,5 +34,18 @@ def check_model(layer, input_vector, correct_ans):
         res.append(vecrectify(vecsum(lintrans(l[0], res[-1]), b)))
 
     sol.add(z3.And([res[-1][correct_ans] > res[-1][i] for i in range(len(res[-1])) if i != correct_ans]))
+    sol.push() # fix current constraints
+
+    perturbations = [0] # TODO construct intelligently pls
+
+    # constraint input by epsilon and check iteratively
+    for epsilon in perturbations:
+        sol.add(constrain_input(inp, input_vector, epsilon))
+        if (sol.check() == z3.sat):
+            sol.pop()
+            continue
+        else:
+            # we found a violation, fine search from here
+            break
 
     return None
