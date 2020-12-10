@@ -21,7 +21,7 @@ def lintrans(W, v):
     return [sum([W[j][i]*v[i] for i in range(len(W[0]))]) for j in range(len(W))]
 
 def constrain_input(inp_z3, inp_real, epsilon):
-    assert (len(inp_z3) == len(inp_real)), "Incompatible input vectors for constraints"
+    assert (len(inp_z3) == len(inp_real)), ("Incompatible input vectors for constraints " + str(len(inp_z3)) + " " + str(len(inp_real)))
     if(epsilon == 0):
         return z3.And([inp_z3[i] == inp_real[i] for i in range(len(inp_z3))])
     elif(epsilon > 0):

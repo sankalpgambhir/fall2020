@@ -37,7 +37,7 @@ def check_model(layer, input_vector, correct_ans):
 
     sol.add(z3.And([res[-1][correct_ans] > res[-1][i] for i in range(len(res[-1])) if i != correct_ans]))
 
-    perturbations = [0.05*(2**i) for i in range(5)] # TODO construct intelligently pls
+    perturbations = [0*(2**i) for i in range(5)] # TODO construct intelligently pls
 
     # constraint input by epsilon and check iteratively
     for epsilon in perturbations:
