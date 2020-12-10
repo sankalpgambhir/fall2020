@@ -15,7 +15,7 @@ def vecsum(x, y):
 def lintrans(W, v):
     # returns Wv for a matrix W and vector v
     assert (len(W) == len(v)), "Incompatible matrix operation"
-    return [sum([W[i][j]*v[i] for i in range(len(W))]) for j in range(len(W[0]))]
+    return [sum([W[i][j]*v[j] for i in range(len(W))]) for j in range(len(W[0]))]
 
 def constrain_input(inp_z3, inp_real, epsilon):
     assert (len(inp_z3) == len(inp_real)), "Incompatible input vectors for constraints"
