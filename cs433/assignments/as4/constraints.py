@@ -40,12 +40,11 @@ def check_model(layer, input_vector, correct_ans):
 
     # constraint input by epsilon and check iteratively
     for epsilon in perturbations:
-        sol.add(constrain_input(inp, input_vector, epsilon))
-        if (sol.check() == z3.sat):
-            sol.pop()
+        if check_epsilon(sol, inp, input_vector, epsilon):
+            # still sat, continue changing epsilon
             continue
         else:
-            # we found a violation, fine search from here
+            # found a violation, start fine search
             break
 
     return None

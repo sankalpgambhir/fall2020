@@ -27,3 +27,13 @@ def constrain_input(inp_z3, inp_real, epsilon):
     
     assert 0, "Invalid flow of control"
     pass
+
+def check_epsilon(solver, inp_z3, inp_real, epsilon):
+    solver.push() # assure old contraints aren't affected
+    solver.add(constrain_input(inp_z3, inp_real, epsilon))
+    if(solver.check() == z3.sat):
+        solver.pop()
+        return True
+    else:
+        solver.pop()
+        return False
