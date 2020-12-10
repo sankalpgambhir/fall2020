@@ -34,7 +34,6 @@ def check_model(layer, input_vector, correct_ans):
         res.append(vecrectify(vecsum(lintrans(l[0], res[-1]), b)))
 
     sol.add(z3.And([res[-1][correct_ans] > res[-1][i] for i in range(len(res[-1])) if i != correct_ans]))
-    sol.push() # fix current constraints
 
     perturbations = [0] # TODO construct intelligently pls
 
