@@ -3,7 +3,7 @@ import numpy as np
 
 def rectify(x):
     assert (type(x) == z3.z3.ArithRef), "Attempted to rectify non arithref object"
-    return z3.If(x > 0, x, x)
+    return z3.If(x > 0, x, 0)
 
 def vecrectify(x):
     return [rectify(i) for i in x]
